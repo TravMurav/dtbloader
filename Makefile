@@ -1,70 +1,81 @@
-
-CROSS_COMPILE 	:= aarch64-linux-gnu-
-CC		:= $(CROSS_COMPILE)gcc
-LD		:= $(CROSS_COMPILE)ld
-OBJCOPY		:= $(CROSS_COMPILE)objcopy
+# SPDX-License-Identifier: GPL-2.0-or-later OR BSD-3-Clause
 
 ARCH		:= aarch64
 O		:= $(CURDIR)/build-$(ARCH)
 
+CC		:= clang
+LD 		:= lld-link
+AR		:= llvm-ar
+
+LIBFDT_DIR = $(CURDIR)/external/dtc/libfdt
+LIBFDT  := $(O)/external/libfdt.a
+
 GNUEFI_DIR = $(CURDIR)/external/gnu-efi
-GNUEFI_OUT = $(GNUEFI_DIR)/$(ARCH)
+LIBEFI  := $(O)/external/libefi.a
 
-CFLAGS += \
-	-I$(GNUEFI_DIR)/inc/ -I$(GNUEFI_DIR)/inc/$(ARCH) -I$(GNUEFI_DIR)/inc/protocol \
-	-fpic -fshort-wchar -fno-stack-protector -ffreestanding \
-	-DCONFIG_$(ARCH) -D__MAKEWITH_GNUEFI -DGNU_EFI_USE_MS_ABI \
-	-mstrict-align
 
-LDFLAGS += \
-	--no-wchar-size-warning \
-	-s -Bsymbolic -nostdlib -shared \
-	-L $(GNUEFI_OUT)/lib/ -L $(GNUEFI_OUT)/gnuefi \
+CFLAGS		:= -target $(ARCH)-windows \
+		   -ffreestanding -fno-stack-protector -fshort-wchar -mno-red-zone \
+		   -I$(GNUEFI_DIR)/inc -I$(LIBFDT_DIR) -I$(CURDIR)/src/include \
+		   -g -gcodeview -O2
 
-LIBS = \
-	-lefi -lgnuefi \
-	-T $(GNUEFI_DIR)/gnuefi/elf_$(ARCH)_efi.lds \
-	$(GNUEFI_OUT)/gnuefi/crt0-efi-$(ARCH).o
+CFLAGS		+= -Wno-pointer-to-int-cast -Wno-int-to-pointer-cast
 
-LIBEFI_A 	:= $(GNUEFI_OUT)/lib/libefi.a
-LIBGNUEFI_A 	:= $(GNUEFI_OUT)/gnuefi/libgnuefi.a
+LDFLAGS		:= -subsystem:efi_application -nodefaultlib -debug
 
 OBJS := \
 	$(O)/src/main.o \
+	$(O)/src/libc.o \
 
-all: $(LIBEFI_A) $(LIBGNUEFI_A) $(O)/test.efi
 
-$(O)/%.efi: $(O)/%.so
-	@echo [OBJCOPY] $(notdir $@)
-	@mkdir -p $(dir $@)
-	@$(OBJCOPY) -j .text -j .sdata -j .data -j .dynamic -j .rodata -j .rel \
-		    -j .rela -j .rel.* -j .rela.* -j .rel* -j .rela* \
-		    -j .areloc -j .reloc --target efi-app-$(ARCH) --subsystem=10 $< $@
+all: $(O)/dtbloader.efi
 
-$(O)/test.so: $(OBJS)
+$(O)/dtbloader.efi: $(OBJS) $(LIBEFI) $(LIBFDT)
 	@echo [LD] $(notdir $@)
 	@mkdir -p $(dir $@)
-	@$(LD) $(LDFLAGS) $^ -o $@ $(LIBS)
+	@$(LD) $(LDFLAGS) -entry:efi_main $^ -out:$@
 
-$(O)/%.o: %.c $(LIBGNUEFI_A)
-	@echo [CC] $(notdir $@)
+$(O)/%.o: %.c
+	@echo [CC] $(if $(findstring external,$@),\($(word 3,$(subst /, ,$(@:$(CURDIR)%=%)))\) )$(notdir $@)
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) -ffreestanding -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
-$(LIBEFI_A): $(LIBGNUEFI_A)
-	@echo [ DEP ] $@
-	ln -s /usr/include/elf.h $(GNUEFI_DIR)/inc/elf.h
-	@$(MAKE) -C$(GNUEFI_DIR) CROSS_COMPILE=$(CROSS_COMPILE) ARCH=$(ARCH) lib
-	rm $(GNUEFI_DIR)/inc/elf.h
-
-$(LIBGNUEFI_A):
-	@echo [ DEP ] $@
-	ln -s /usr/include/elf.h $(GNUEFI_DIR)/inc/elf.h
-	@$(MAKE) -C$(GNUEFI_DIR) CROSS_COMPILE=$(CROSS_COMPILE) ARCH=$(ARCH) gnuefi
-	rm $(GNUEFI_DIR)/inc/elf.h
 
 .PHONY: clean
 clean:
 	rm -rf $(O)
-	rm -rf $(GNUEFI_OUT)
 
+#
+# GNU-EFI Related rules
+#
+
+# NOTE: We drop setjmp and ctors since they are asm code in gnu flavor and clang is upset with that.
+LIBEFI_FILES = boxdraw smbios console crc data debug dpath \
+        entry error event exit guid hand hw init lock \
+        misc pause print sread str cmdline\
+	runtime/rtlock runtime/efirtlib runtime/rtstr runtime/vm runtime/rtdata  \
+	$(ARCH)/initplat $(ARCH)/math
+
+LIBEFI_OBJS := $(LIBEFI_FILES:%=$(O)/external/gnu-efi/lib/%.o)
+
+
+.INTERMEDIATE: $(GNUEFI_DIR)/inc/elf.h
+$(GNUEFI_DIR)/inc/elf.h:
+	ln -sf /usr/include/elf.h $(GNUEFI_DIR)/inc/elf.h
+
+$(LIBEFI): $(LIBEFI_OBJS) $(GNUEFI_DIR)/inc/elf.h
+	@echo [AR] $(notdir $@)
+	@$(AR) rc $@ $(LIBEFI_OBJS)
+
+#
+# libfdt related rules
+#
+
+LIBFDT_dir = $(LIBFDT_DIR)
+
+include $(LIBFDT_DIR)/Makefile.libfdt
+LIBFDT_OBJS := $(LIBFDT_SRCS:%.c=$(O)/external/dtc/libfdt/%.o)
+
+$(LIBFDT): $(LIBFDT_OBJS)
+	@echo [AR] $(notdir $@)
+	@$(AR) rc $@ $(LIBFDT_OBJS)
