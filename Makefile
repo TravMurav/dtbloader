@@ -17,7 +17,7 @@ LIBEFI  := $(O)/external/libefi.a
 CFLAGS		:= -target $(ARCH)-windows \
 		   -ffreestanding -fno-stack-protector -fshort-wchar -mno-red-zone \
 		   -I$(GNUEFI_DIR)/inc -I$(LIBFDT_DIR) -I$(CURDIR)/src/include \
-		   -g -gcodeview -O2
+		   -g -gcodeview -O2 -DEFI_DEBUG
 
 CFLAGS		+= -Wno-pointer-to-int-cast -Wno-int-to-pointer-cast
 
@@ -26,6 +26,8 @@ LDFLAGS		:= -subsystem:efi_application -nodefaultlib -debug
 OBJS := \
 	$(O)/src/main.o \
 	$(O)/src/libc.o \
+	$(O)/src/device.o \
+	$(O)/src/util.o \
 
 
 all: $(O)/dtbloader.efi
@@ -58,12 +60,7 @@ LIBEFI_FILES = boxdraw smbios console crc data debug dpath \
 
 LIBEFI_OBJS := $(LIBEFI_FILES:%=$(O)/external/gnu-efi/lib/%.o)
 
-
-.INTERMEDIATE: $(GNUEFI_DIR)/inc/elf.h
-$(GNUEFI_DIR)/inc/elf.h:
-	ln -sf /usr/include/elf.h $(GNUEFI_DIR)/inc/elf.h
-
-$(LIBEFI): $(LIBEFI_OBJS) $(GNUEFI_DIR)/inc/elf.h
+$(LIBEFI): $(LIBEFI_OBJS)
 	@echo [AR] $(notdir $@)
 	@$(AR) rc $@ $(LIBEFI_OBJS)
 
