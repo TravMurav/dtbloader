@@ -8,12 +8,19 @@
 #include <util.h>
 #include <device.h>
 
-static struct device aspire1_dev = {
-	.name = L"Acer Aspire 1",
-	.dtb  = L"qcom\\sc7180-acer-aspire1.dtb",
-};
+#pragma section(".devs", read)
+
+__declspec(allocate(".devs$a")) struct device *__start_dtbloader_dev = NULL;
+__declspec(allocate(".devs$c")) struct device *__stop_dtbloader_dev = NULL;
+
 
 struct device *match_device(void)
 {
-	return &aspire1_dev;
+	struct device **dev = &__start_dtbloader_dev + 1;
+
+	for (; dev < &__stop_dtbloader_dev; dev++) {
+		return *dev;
+	}
+
+	return NULL;
 }

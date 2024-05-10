@@ -23,11 +23,15 @@ CFLAGS		+= -Wno-pointer-to-int-cast -Wno-int-to-pointer-cast
 
 LDFLAGS		:= -subsystem:efi_application -nodefaultlib -debug
 
+DEVICE_SRCS := \
+	$(notdir $(shell find $(CURDIR)/src/devices -name '*.c'))
+
 OBJS := \
 	$(O)/src/main.o \
 	$(O)/src/libc.o \
 	$(O)/src/device.o \
 	$(O)/src/util.o \
+	$(DEVICE_SRCS:%.c=$(O)/src/devices/%.o)
 
 
 all: $(O)/dtbloader.efi

@@ -14,6 +14,15 @@ struct device {
 	CHAR16 *dtb;
 };
 
+/*
+ * NOTE: This should be static but apparently clang is
+ * bugged and ignores "used" attribute here... ehhh :(
+ */
+#define DEVICE_DESC(dev) \
+	__declspec(allocate(".devs$b")) \
+	__attribute__((used)) \
+	struct device *_dtbloader_dev_##dev = (&dev)
+
 /**
  * match_device() - Detect the device.
  *
