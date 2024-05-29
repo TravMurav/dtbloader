@@ -1,0 +1,32 @@
+Computer Information
+--------------------
+BiosVendor: Phoenix
+BiosVersion: V1.13
+BiosMajorRelease: 1
+BiosMinorRelease: 13
+FirmwareMajorRelease: 01
+FirmwareMinorRelease: 07
+Manufacturer: Acer
+Family: Aspire 1
+ProductName: Aspire A114-61
+ProductSku: 
+EnclosureKind: a
+BaseboardManufacturer: S7C
+BaseboardProduct: Daisy_7C
+Hardware IDs
+------------
+{45d37dbe-40fb-57bd-a257-55f422d4dc0a}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{373bfde5-ffaa-504c-84f3-f8f5357dfc29}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{e12521bf-0ed8-5406-af87-adad812c57c5}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{faa12ed4-bd49-5471-8f74-75c2267c3b46}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{965e3681-de3b-5e39-bb62-7d4917d7e36f}   <- Manufacturer + Family + ProductName + ProductSku
+{82fe1869-361c-56b2-b853-631747e64aa7}   <- Manufacturer + Family + ProductName
+{7e15f49e-04b4-5d56-a567-e7a15ba2aca1}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{7c107a7f-2d77-51aa-aef8-8d777e26ffbc}   <- Manufacturer + ProductSku
+{68b38fff-aadc-512c-937b-99d9c13eb484}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{260192d4-06d4-5124-ab46-ba210f4c14d7}   <- Manufacturer + ProductName
+{175f000b-3d05-5c01-aedd-817b1a141f93}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{24277a94-7064-500f-9854-5264f20cfa99}   <- Manufacturer + Family
+{92dcc94d-48f7-5ee8-b9ec-a6393fb7a484}   <- Manufacturer + EnclosureKind
+{d234a917-df0b-5453-a3d9-f27c06307395}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{1e301734-5d49-5df4-9ed2-aa1c0a9dddda}   <- Manufacturer

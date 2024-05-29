@@ -19,4 +19,21 @@ void FileClose(EFI_FILE_HANDLE FileHandle);
 EFI_STATUS AllocateZeroPages(UINT64 page_count, EFI_PHYSICAL_ADDRESS *addr);
 void FreePages(EFI_PHYSICAL_ADDRESS addr, UINT64 page_count);
 
+#define ARRAY_SIZE(x) (sizeof(x)/sizeof((x)[0]))
+
+static inline UINT16 SwapBytes16(UINT16 Value)
+{
+	return (UINT16) ((Value<< 8) | (Value>> 8));
+}
+
+static inline UINT32 SwapBytes32(UINT32 Value)
+{
+	UINT32  LowerBytes;
+	UINT32  HigherBytes;
+
+	LowerBytes  = (UINT32) SwapBytes16 ((UINT16) Value);
+	HigherBytes = (UINT32) SwapBytes16 ((UINT16) (Value >> 16));
+	return (LowerBytes << 16 | HigherBytes);
+}
+
 #endif

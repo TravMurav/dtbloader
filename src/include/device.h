@@ -8,10 +8,12 @@
  * struct device - Device description
  * @name:	Pretty marketing name of this device.
  * @dtb:	Name of the DTB file.
+ * @hwids:	zero-terminated array of hwid values.
  */
 struct device {
 	CHAR16 *name;
 	CHAR16 *dtb;
+	EFI_GUID *hwids;
 };
 
 /*

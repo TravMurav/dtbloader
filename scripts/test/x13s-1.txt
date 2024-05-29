@@ -1,0 +1,33 @@
+Computer Information
+--------------------
+BiosVendor: LENOVO
+BiosVersion: N3HET88W (1.60 )
+BiosMajorRelease: 1
+BiosMinorRelease: 60
+FirmwareMajorRelease: 01
+FirmwareMinorRelease: 17
+Manufacturer: LENOVO
+Family: ThinkPad X13s Gen 1
+ProductName: 21BXCTO1WW
+ProductSku: LENOVO_MT_21BX_BU_Think_FM_ThinkPad X13s Gen 1
+EnclosureKind: a
+BaseboardManufacturer: LENOVO
+BaseboardProduct: 21BXCTO1WW
+Hardware IDs
+------------
+{810e34c6-cc69-5e36-8675-2f6e354272d3}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{f22c935e-2dc8-5949-9486-09bbf10361b2}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{abdbb2cb-ab52-5674-9d0a-2e2cb69bcbb4}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{ddf28a3f-43fc-54a4-a6a7-4cba5ad46b3e}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{4df470e6-7878-5b0f-b2e0-733d5d9fa228}   <- Manufacturer + Family + ProductName + ProductSku
+{3ad863ab-0181-5a2f-9cc1-70eedc446da9}   <- Manufacturer + Family + ProductName
+{69c47e1e-fde2-5062-b777-acbeab73784b}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{3486eccc-d0ac-534a-9e2f-a1c18bc310c6}   <- Manufacturer + ProductSku
+{c869f39e-f205-5ca0-be7b-d90f90ef5556}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{b470d002-ad8e-5d5c-a7bf-bb1333f2ce4b}   <- Manufacturer + ProductName
+{64b71f12-4341-5e5c-b7cd-25b6503799e3}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{f249803d-0d95-54f3-a28f-f26c14a03f3b}   <- Manufacturer + Family
+{e093d715-70f7-51f4-b6c8-b4a7e31def85}   <- Manufacturer + EnclosureKind
+{156c9b34-bedb-5bfd-ae1f-ef5d2a994967}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{6de5d951-d755-576b-bd09-c5cf66b27234}   <- Manufacturer
+

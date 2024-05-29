@@ -31,6 +31,7 @@ OBJS := \
 	$(O)/src/libc.o \
 	$(O)/src/device.o \
 	$(O)/src/util.o \
+	$(O)/src/chid.o \
 	$(DEVICE_SRCS:%.c=$(O)/src/devices/%.o)
 
 

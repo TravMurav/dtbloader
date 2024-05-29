@@ -7,6 +7,7 @@
 
 #include <util.h>
 #include <device.h>
+#include <chid.h>
 
 #pragma section(".devs", read)
 
@@ -16,10 +17,26 @@ __declspec(allocate(".devs$c")) struct device *__stop_dtbloader_dev = NULL;
 
 struct device *match_device(void)
 {
-	struct device **dev = &__start_dtbloader_dev + 1;
+	EFI_STATUS status;
+	struct device **dev;
+	EFI_GUID hwids[15] = {0};
+	int priority[] = {3, 6, 8, 10, 4, 5 , 7, 9, 11}; /* From most to least specific. */
+	int i, j;
 
-	for (; dev < &__stop_dtbloader_dev; dev++) {
-		return *dev;
+	status = populate_board_hwids(hwids);
+	if (EFI_ERROR(status)) {
+		Print(L"Failed to populate board hwids: %r\n", status);
+		return NULL;
+	}
+
+	for (i = 0; i < ARRAY_SIZE(priority); ++i) {
+		for (dev = &__start_dtbloader_dev + 1; dev < &__stop_dtbloader_dev; dev++) {
+			for (j = 0; (*dev)->hwids[j].Data1; ++j) {
+				if (!CompareGuid(&hwids[i], &(*dev)->hwids[j])) {
+					return *dev;
+				}
+			}
+		}
 	}
 
 	return NULL;
