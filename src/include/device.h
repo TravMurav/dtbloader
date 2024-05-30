@@ -9,11 +9,14 @@
  * @name:	Pretty marketing name of this device.
  * @dtb:	Name of the DTB file.
  * @hwids:	zero-terminated array of hwid values.
+ * @dt_fixup:	Board specific DTB fixups callback.
  */
 struct device {
 	CHAR16 *name;
 	CHAR16 *dtb;
 	EFI_GUID *hwids;
+
+	EFI_STATUS (*dt_fixup)(struct device *dev, void* dtb);
 };
 
 /*
@@ -34,5 +37,8 @@ struct device {
  * Returns: Pointer to the device structure or NULL on failure.
  */
 struct device *match_device(void);
+
+EFI_STATUS get_board_stable_hash(EFI_SHA1_HASH *hash, CHAR8 *key);
+EFI_STATUS dt_set_default_mac(struct device *dev, void *dtb);
 
 #endif

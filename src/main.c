@@ -113,6 +113,13 @@ EFI_STATUS efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable)
 	if (EFI_ERROR(status))
 		return status;
 
+	if (dev->dt_fixup) {
+		status = dev->dt_fixup(dev, dtb);
+		if (EFI_ERROR(status)) {
+			Print(L"Failed to fixup dtb: %d\n", status);
+			return status;
+		}
+	}
 
 	status = finalize_dtb(dtb);
 	if (EFI_ERROR(status))
