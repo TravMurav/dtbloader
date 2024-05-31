@@ -28,14 +28,6 @@ struct device {
 	__attribute__((used)) \
 	struct device *_dtbloader_dev_##dev = (&dev)
 
-/**
- * match_device() - Detect the device.
- *
- * This function attempts to find the device structure for the
- * machine that dtbloader is running on.
- *
- * Returns: Pointer to the device structure or NULL on failure.
- */
 struct device *match_device(void);
 
 EFI_STATUS get_board_stable_hash(EFI_SHA1_HASH *hash, CHAR8 *key);

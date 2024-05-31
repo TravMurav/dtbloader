@@ -83,7 +83,7 @@ static EFI_STATUS load_dtb(EFI_HANDLE ImageHandle, struct device *dev, UINT8 **d
 	/* The spec mandates using "ACPI" memory type for any configuration tables like dtb */
 	status = uefi_call_wrapper(BS->AllocatePages, 4, AllocateAnyPages, EfiACPIReclaimMemory, dtb_pages, &dtb_phys);
 	if (EFI_ERROR(status)) {
-		Print(L"Failed to allocate memory: %d\n", status);
+		Print(L"Failed to allocate memory: %r\n", status);
 		return status;
 	}
 
@@ -97,6 +97,7 @@ static EFI_STATUS load_dtb(EFI_HANDLE ImageHandle, struct device *dev, UINT8 **d
 	}
 
 	FileRead(dtb_file, dtb, dtb_sz);
+	FileClose(dtb_file);
 
 	ret = fdt_check_header(dtb);
 	if (ret) {
@@ -160,7 +161,7 @@ EFI_STATUS efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable)
 	if (dev->dt_fixup) {
 		status = dev->dt_fixup(dev, dtb);
 		if (EFI_ERROR(status)) {
-			Print(L"Failed to fixup dtb: %d\n", status);
+			Print(L"Failed to fixup dtb: %r\n", status);
 			return status;
 		}
 	}
@@ -173,7 +174,7 @@ EFI_STATUS efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable)
 
 	status = uefi_call_wrapper(BS->InstallConfigurationTable, 2, &EfiDtbTableGuid, dtb);
 	if (EFI_ERROR(status)) {
-		Print(L"Failed to install dtb: %d\n", status);
+		Print(L"Failed to install dtb: %r\n", status);
 		return status;
 	}
 

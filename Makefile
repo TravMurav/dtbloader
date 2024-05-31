@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: GPL-2.0-or-later OR BSD-3-Clause
+# SPDX-License-Identifier: BSD-3-Clause
 
 ARCH		:= aarch64
 O		:= $(CURDIR)/build-$(ARCH)

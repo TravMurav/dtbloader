@@ -17,13 +17,25 @@ __declspec(allocate(".devs$a")) struct device *__start_dtbloader_dev = NULL;
 __declspec(allocate(".devs$c")) struct device *__stop_dtbloader_dev = NULL;
 
 
+/**
+ * match_device() - Detect the device.
+ *
+ * This function attempts to find the device structure for the
+ * machine that dtbloader is running on.
+ *
+ * Returns: Pointer to the device structure or NULL on failure.
+ */
 struct device *match_device(void)
 {
 	EFI_STATUS status;
 	struct device **dev;
+	static struct device *cached_dev = NULL;
 	EFI_GUID hwids[15] = {0};
 	int priority[] = {3, 6, 8, 10, 4, 5 , 7, 9, 11}; /* From most to least specific. */
 	int i, j;
+
+	if (cached_dev)
+		return cached_dev;
 
 	status = populate_board_hwids(hwids);
 	if (EFI_ERROR(status)) {
@@ -35,6 +47,7 @@ struct device *match_device(void)
 		for (dev = &__start_dtbloader_dev + 1; dev < &__stop_dtbloader_dev; dev++) {
 			for (j = 0; (*dev)->hwids[j].Data1; ++j) {
 				if (!CompareGuid(&hwids[i], &(*dev)->hwids[j])) {
+					cached_dev = *dev;
 					return *dev;
 				}
 			}
@@ -119,6 +132,14 @@ static bool dt_check_existing_mac_prop(void *dtb, int node, const char *prop)
 	return false;
 }
 
+/**
+ * dt_update_mac() - Insert mac property if not present.
+ * @dtb:	 DT blob.
+ * @compatibles: Array of compatibles to add the mac to.
+ * @num:	 Count of compatibles.
+ * @prop:	 Name of the prop to add (i.e. "local-mac-address")
+ * @mac:	 Raw MAC value to add.
+ */
 static EFI_STATUS dt_update_mac(void *dtb, const char * const compatibles[], unsigned num,
 				const char *prop, UINT8 mac[MAC_ADDR_SIZE])
 {
