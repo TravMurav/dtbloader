@@ -9,6 +9,8 @@
 #include <util.h>
 #include <device.h>
 
+#include <protocol/dt_fixup.h>
+
 static const CHAR16 *dtb_locations[] = {
 	L"\\dtbloader\\dtbs\\",
 	L"\\dtbs\\",
@@ -136,6 +138,60 @@ static EFI_STATUS finalize_dtb(UINT8 *dtb)
 	return EFI_SUCCESS;
 }
 
+static EFI_STATUS apply_dt_fixups(struct device *dev, void *dtb)
+{
+	EFI_STATUS status;
+
+	if (dev->dt_fixup) {
+		status = dev->dt_fixup(dev, dtb);
+		if (EFI_ERROR(status)) {
+			return status;
+		}
+	}
+
+	return EFI_SUCCESS;
+}
+
+EFI_STATUS efi_dt_fixup(EFI_DT_FIXUP_PROTOCOL *this, void *dtb, UINTN *size, UINT32 flags)
+{
+	struct device *dev = match_device();
+	UINTN extra_space = 4096 * 4;
+	EFI_STATUS status;
+	int ret;
+
+	if (!dev)
+		return EFI_UNSUPPORTED;
+
+	if (fdt_check_header(dtb))
+		return EFI_INVALID_PARAMETER;
+
+	if (*size < fdt_totalsize(dtb) + extra_space) {
+		*size = fdt_totalsize(dtb) + extra_space;
+		return EFI_BUFFER_TOO_SMALL;
+	}
+
+	ret = fdt_open_into(dtb, dtb, *size);
+	if (ret) {
+		Print(L"(dtbloader) fdt open failed: %d\n", ret);
+		return EFI_LOAD_ERROR;
+	}
+
+	if (flags & EFI_DT_APPLY_FIXUPS) {
+		status = apply_dt_fixups(dev, dtb);
+		if (EFI_ERROR(status)) {
+			Print(L"(dtbloader) Failed to fixup dtb: %r\n", status);
+			return status;
+		}
+	}
+
+	return finalize_dtb(dtb);
+}
+
+EFI_DT_FIXUP_PROTOCOL fixup_prot = {
+	.Revision = EFI_DT_FIXUP_PROTOCOL_REVISION,
+	.Fixup = efi_dt_fixup,
+};
+
 EFI_STATUS efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable)
 {
 	EFI_STATUS status;
@@ -158,17 +214,25 @@ EFI_STATUS efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable)
 	if (EFI_ERROR(status))
 		return status;
 
-	if (dev->dt_fixup) {
-		status = dev->dt_fixup(dev, dtb);
-		if (EFI_ERROR(status)) {
-			Print(L"Failed to fixup dtb: %r\n", status);
-			return status;
-		}
+	status = apply_dt_fixups(dev, dtb);
+	if (EFI_ERROR(status)) {
+		Print(L"Failed to fixup dtb: %r\n", status);
+		return status;
 	}
 
 	status = finalize_dtb(dtb);
 	if (EFI_ERROR(status))
 		return status;
+
+	EFI_GUID efi_dt_fixup_prot_guid = EFI_DT_FIXUP_PROTOCOL_GUID;
+	EFI_HANDLE fixup_handle = NULL;
+
+	status = uefi_call_wrapper(BS->InstallProtocolInterface, 4, &fixup_handle, &efi_dt_fixup_prot_guid,
+			EFI_NATIVE_INTERFACE, &fixup_prot);
+	if (EFI_ERROR(status)) {
+		Print(L"Failed to install fixup protocol: %r\n", status);
+		return status;
+	}
 
 	EFI_GUID EfiDtbTableGuid = EFI_DTB_TABLE_GUID;
 
