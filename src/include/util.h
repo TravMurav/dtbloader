@@ -19,6 +19,8 @@ void FileClose(EFI_FILE_HANDLE FileHandle);
 EFI_STATUS AllocateZeroPages(UINT64 page_count, EFI_PHYSICAL_ADDRESS *addr);
 void FreePages(EFI_PHYSICAL_ADDRESS addr, UINT64 page_count);
 
+CHAR16 *StrrChr(CHAR16 *str, CHAR16 ch);
+
 #define ARRAY_SIZE(x) (sizeof(x)/sizeof((x)[0]))
 
 static inline UINT16 SwapBytes16(UINT16 Value)

@@ -9,16 +9,60 @@
 #include <util.h>
 #include <device.h>
 
-EFI_STATUS load_dtb(EFI_HANDLE ImageHandle, struct device *dev, UINT8 **dtb_ret)
+static const CHAR16 *dtb_locations[] = {
+	L"\\dtbloader\\dtbs\\",
+	L"\\dtbs\\",
+	L"\\",
+};
+
+static CHAR16 *basename(CHAR16 *name)
+{
+	CHAR16 *ret = StrrChr(name, L'\\');
+
+	if (!ret)
+		return name;
+
+	return ret + 1;
+}
+
+static EFI_FILE_HANDLE open_dtb(EFI_FILE_HANDLE volume, CHAR16 *name)
+{
+	EFI_FILE_HANDLE dtb_file = NULL;
+	CHAR16 dtb_name[128];
+	int i;
+
+	for (i = 0; i < ARRAY_SIZE(dtb_locations); ++i) {
+		StrnCpy(dtb_name, dtb_locations[i], 32);
+		StrnCat(dtb_name, name, ARRAY_SIZE(dtb_name) - 33);
+
+		dtb_file = FileOpen(volume, dtb_name);
+		if (dtb_file)
+			break;
+
+		/*
+		 * Try to be robust and strip vendor dir from the name.
+		 * This convention is used by x13s as well as some tools like boot-deploy.
+		 */
+		StrnCpy(dtb_name, dtb_locations[i], 32);
+		StrnCat(dtb_name, basename(name), ARRAY_SIZE(dtb_name) - 33);
+
+		dtb_file = FileOpen(volume, dtb_name);
+		if (dtb_file)
+			break;
+	}
+
+	if (dtb_file)
+		Dbg(L"  Found %s\n", dtb_name);
+
+	return dtb_file;
+}
+
+static EFI_STATUS load_dtb(EFI_HANDLE ImageHandle, struct device *dev, UINT8 **dtb_ret)
 {
 	EFI_STATUS status;
 	int ret;
 
-	CHAR16 dtb_name[128] = L"\\dtbs\\";
-	StrnCat(dtb_name, dev->dtb, 128 - 17);
-
-
-	Dbg(L"Installing DTB: %s\n", dtb_name);
+	Dbg(L"Installing DTB: %s\n", dev->dtb);
 
 	EFI_FILE_HANDLE volume = GetVolume(ImageHandle);
 	if (!volume) {
@@ -26,7 +70,7 @@ EFI_STATUS load_dtb(EFI_HANDLE ImageHandle, struct device *dev, UINT8 **dtb_ret)
 		return EFI_INVALID_PARAMETER;
 	}
 
-	EFI_FILE_HANDLE dtb_file = FileOpen(volume, dtb_name);
+	EFI_FILE_HANDLE dtb_file = open_dtb(volume, dev->dtb);
 	if (!dtb_file) {
 		Print(L"Cant open the file\n");
 		return EFI_INVALID_PARAMETER;
@@ -78,7 +122,7 @@ error:
 
 }
 
-EFI_STATUS finalize_dtb(UINT8 *dtb)
+static EFI_STATUS finalize_dtb(UINT8 *dtb)
 {
 	int ret;
 

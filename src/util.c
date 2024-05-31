@@ -81,3 +81,17 @@ void FreePages(EFI_PHYSICAL_ADDRESS addr, UINT64 page_count)
 {
 	uefi_call_wrapper(BS->FreePages, 2, addr, page_count);
 }
+
+CHAR16 *StrrChr(CHAR16 *str, CHAR16 ch)
+{
+	CHAR16 *last = ch ? 0 : str;
+
+	while (*str) {
+		if (*str == ch)
+			last = str;
+
+		str += 1;
+	}
+
+	return last;
+}
