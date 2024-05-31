@@ -21,7 +21,7 @@ CFLAGS		:= -target $(ARCH)-windows \
 
 CFLAGS		+= -Wno-pointer-to-int-cast -Wno-int-to-pointer-cast
 
-LDFLAGS		:= -subsystem:efi_application -nodefaultlib -debug
+LDFLAGS		:= -entry:efi_main -nodefaultlib -debug
 
 DEVICE_SRCS := \
 	$(notdir $(shell find $(CURDIR)/src/devices -name '*.c'))
@@ -40,7 +40,7 @@ all: $(O)/dtbloader.efi
 $(O)/dtbloader.efi: $(OBJS) $(LIBEFI) $(LIBFDT)
 	@echo [LD] $(notdir $@)
 	@mkdir -p $(dir $@)
-	@$(LD) $(LDFLAGS) -entry:efi_main $^ -out:$@
+	@$(LD) $(LDFLAGS) -subsystem:efi_boot_service_driver $^ -out:$@
 
 $(O)/%.o: %.c
 	@echo [CC] $(if $(findstring external,$@),\($(word 3,$(subst /, ,$(@:$(CURDIR)%=%)))\) )$(notdir $@)
