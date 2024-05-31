@@ -52,6 +52,11 @@ get_field() {
 
 var_prefix="$(echo $(get_field "Manufacturer") $(get_field "Family") | tr '[:upper:]' '[:lower:]' | sed 's/\(\W\|-\)/_/g')"
 
+echo "// SPDX-License-Identifier: BSD-3-Clause"
+echo
+echo "#include <efi.h>"
+echo "#include <device.h>"
+echo
 echo "static EFI_GUID ""$var_prefix""_hwids[] = {"
 
 # If it's stupid but it works...

@@ -2,10 +2,6 @@
 /* Copyright (c) 2024 Nikita Travkin <nikita@trvn.ru> */
 
 #include <efi.h>
-#include <efilib.h>
-#include <libfdt.h>
-
-#include <util.h>
 #include <device.h>
 
 static EFI_GUID acer_aspire_1_hwids[] = {
@@ -29,10 +25,9 @@ static EFI_GUID acer_aspire_1_hwids[] = {
 
 static struct device acer_aspire_1_dev = {
 	.name  = L"Acer Aspire 1",
-	.dtb  = L"qcom\\sc7180-acer-aspire1.dtb",
+	.dtb   = L"qcom\\sc7180-acer-aspire1.dtb",
 	.hwids = acer_aspire_1_hwids,
 
 	.dt_fixup = dt_set_default_mac,
 };
 DEVICE_DESC(acer_aspire_1_dev);
-
