@@ -62,6 +62,10 @@ dtbloader will look for the dtb files in the partition it was installed on. It w
 > Some WoA devices keep full bootloader chain on the same eMMC/UFS as the OS. Make sure to never tamper with
 > bootloader related partitions.
 
+> [!TIP]
+> If SecureBoot is enabled, dtbloader will save the DTB hash into an uefi varialbe and show a warning
+> in case the hash changes. Hash will be updated automatically after.
+
 ## Acknowledgements
 
 This project is a reimplementation of the original [DtbLoader.efi](https://github.com/aarch64-laptops/edk2/tree/dtbloader-app)

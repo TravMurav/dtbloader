@@ -152,6 +152,45 @@ static EFI_STATUS apply_dt_fixups(struct device *dev, void *dtb)
 	return EFI_SUCCESS;
 }
 
+/*
+ * NOTE: The security model for now is pretty simple.
+ * We just check if the dtb hash has changed since the
+ * last time and will ask the user if the change was intended.
+ */
+static EFI_STATUS check_dtb_hash(void *dtb)
+{
+	EFI_STATUS status;
+	UINTN dtb_size = fdt_totalsize(dtb);
+	EFI_SHA1_HASH *old_hash, new_hash;
+	bool hashes_match = false;
+
+	if (!SecureBootEnabled())
+		return EFI_SUCCESS;
+
+	old_hash = LibGetVariable(L"DtbloaderDtbHash", &gEfiGlobalVariableGuid);
+
+	status = Hash2Sha1(dtb, dtb_size, &new_hash);
+	if (EFI_ERROR(status))
+		return status;
+
+	if (old_hash) {
+		hashes_match = !CompareMem(old_hash, &new_hash, sizeof(*old_hash));
+		FreePool(old_hash);
+	}
+
+	if (hashes_match)
+		return EFI_SUCCESS;
+
+	Print(L"%es\n", L"(dtbloader) DTB has changed! Press any key to confirm...");
+	Pause();
+
+	status = LibSetNVVariable(L"DtbloaderDtbHash", &gEfiGlobalVariableGuid, sizeof(new_hash), &new_hash);
+	if (EFI_ERROR(status))
+		return status;
+
+	return EFI_SUCCESS;
+}
+
 EFI_STATUS efi_dt_fixup(EFI_DT_FIXUP_PROTOCOL *this, void *dtb, UINTN *size, UINT32 flags)
 {
 	struct device *dev = match_device();
@@ -211,6 +250,14 @@ EFI_STATUS efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable)
 	UINT8 *dtb = NULL;
 
 	status = load_dtb(ImageHandle, dev, &dtb);
+	if (EFI_ERROR(status))
+		return status;
+
+	/*
+	 * NOTE: load_dtb resizes the dtb to the buffer size so maybe
+	 * it's not the best place to check the hash...
+	 */
+	status = check_dtb_hash(dtb);
 	if (EFI_ERROR(status))
 		return status;
 
