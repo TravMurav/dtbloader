@@ -1,0 +1,32 @@
+Computer Information
+--------------------
+BiosVendor: LENOVO
+BiosVersion: NHCN36WW
+BiosMajorRelease: 1
+BiosMinorRelease: 36
+FirmwareMajorRelease: 01
+FirmwareMinorRelease: 35
+Manufacturer: LENOVO
+Family: Yoga Slim 7 14Q8X9
+ProductName: 83ED
+ProductSku: LENOVO_MT_83ED_BU_idea_FM_Yoga Slim 7 14Q8X9
+EnclosureKind: a
+BaseboardManufacturer: LENOVO
+BaseboardProduct: LNVNB161216
+Hardware IDs
+------------
+{3fb1e5ba-05cd-5153-ad64-1d8bc6dc7a1b}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{d99f6cb2-4a96-5e4a-8e29-19d52dfc2870}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{6d53c38f-6adb-578b-a418-2abda4d8485d}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{8073dbed-501f-5f5e-a619-4cdd9c00e865}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{d27cf20e-e185-578e-bd46-f4cc3a718bb2}   <- Manufacturer + Family + ProductName + ProductSku
+{8477f828-512b-56cf-af55-c711a6831551}   <- Manufacturer + Family + ProductName
+{f7f92b85-ff01-5e93-a453-c7f91029aa55}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{0700776d-0de7-5ea7-b9bf-77e0454d35e1}   <- Manufacturer + ProductSku
+{ee39b629-4187-5ff7-84c0-e354555562cd}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{fdb12a4f-1e8b-524e-97b5-feef23a8a8da}   <- Manufacturer + ProductName
+{63429d43-c970-570d-aaa7-54300924e0c5}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{8f143f12-40dc-5801-8e61-08a88cd68c1e}   <- Manufacturer + Family
+{e093d715-70f7-51f4-b6c8-b4a7e31def85}   <- Manufacturer + EnclosureKind
+{71d86d4d-02f8-5566-a7a1-529cef184b7e}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{6de5d951-d755-576b-bd09-c5cf66b27234}   <- Manufacturer
