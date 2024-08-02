@@ -1,0 +1,32 @@
+Computer Information
+--------------------
+BiosVendor: LENOVO
+BiosVersion: 9UCN33WW(V2.06)
+BiosMajorRelease: 1
+BiosMinorRelease: 33
+FirmwareMajorRelease: 01
+FirmwareMinorRelease: 21
+Manufacturer: LENOVO
+Family: YOGA C630-13Q50
+ProductName: 81JL
+ProductSku: LENOVO_MT_81JL_BU_idea_FM_YOGA C630-13Q50
+EnclosureKind: 20
+BaseboardManufacturer: LENOVO
+BaseboardProduct: LNVNB161216
+Hardware IDs
+------------
+{b8c71349-3669-56f3-99ee-ae473a2edd96}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{d17c132e-f06e-5e38-8084-9cd642dd9b34}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{8f56cf17-7bdd-5414-832d-97cd26837114}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{b323d38a-88c6-5cf6-af0d-0db3f3c2560d}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{43b71948-9c47-5372-a5cb-18db47bb873f}   <- Manufacturer + Family + ProductName + ProductSku
+{67a23be6-42a6-5900-8325-847a318ce252}   <- Manufacturer + Family + ProductName
+{94f73d29-3981-59a8-8f25-214f84d1522a}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{5ca3cf2b-d6e9-5b54-93f7-1cebd7b3704f}   <- Manufacturer + ProductSku
+{81f308c0-db65-50c2-a660-52e06fc0ff9f}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{30b031c0-9de7-5d31-a61c-dee772871b7d}   <- Manufacturer + ProductName
+{382926c0-ce35-53af-8ff9-ca9cc06cfc7b}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{dd3a12ef-e928-519d-83d7-6674a2ae0ffa}   <- Manufacturer + Family
+{6c95fc34-96cc-5c9f-8e78-6baaffde78ce}   <- Manufacturer + EnclosureKind
+{71d86d4d-02f8-5566-a7a1-529cef184b7e}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{6de5d951-d755-576b-bd09-c5cf66b27234}   <- Manufacturer
