@@ -37,7 +37,7 @@ static EFI_GUID lenovo_thinkpad_x13s_gen_1_hwids[] = {
 
 static struct device lenovo_thinkpad_x13s_gen_1_dev = {
 	.name  = L"LENOVO ThinkPad X13s Gen 1",
-	.dtb   = L"qcom\\sc8280xp-lenovo-thinkpad-x13s.dts",
+	.dtb   = L"qcom\\sc8280xp-lenovo-thinkpad-x13s.dtb",
 	.hwids = lenovo_thinkpad_x13s_gen_1_hwids,
 
 	.dt_fixup = dt_set_default_mac,
