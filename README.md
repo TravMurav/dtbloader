@@ -12,8 +12,13 @@ attemtps to simplify running Linux-based or other OS that use DT by providing:
 
 ## Supported devices
 
-- Acer Aspire 1
-- Lenovo ThinkPad X13s Gen 1
+<!--
+  We keep this list simple and just alphabetical order for now but
+  add soc to each device in a comment so it's easier to split per-soc later.
+-->
+
+- <!-- sc7180   --> Acer Aspire 1
+- <!-- sc8280xp --> Lenovo ThinkPad X13s Gen 1
 
 ### Adding new devices
 
