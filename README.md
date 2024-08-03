@@ -48,7 +48,7 @@ Then build the project:
 make
 ```
 
-Note that dtbloader requires `clang` to be built.
+Note that dtbloader requires `clang` to be built. Use `make DEBUG=1` to enable additional log messages.
 
 ## Usage
 

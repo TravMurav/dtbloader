@@ -7,7 +7,7 @@
 #ifdef EFI_DEBUG
 	#define Dbg Print
 #else
-	#define Dbg(...) DbgPrint(D_INFO, __VA_ARGS__)
+	#define Dbg(...)
 #endif
 
 

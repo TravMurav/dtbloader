@@ -17,7 +17,11 @@ LIBEFI  := $(O)/external/libefi.a
 CFLAGS		:= -target $(ARCH)-windows \
 		   -ffreestanding -fno-stack-protector -fshort-wchar -mno-red-zone \
 		   -I$(GNUEFI_DIR)/inc -I$(LIBFDT_DIR) -I$(CURDIR)/src/include \
-		   -g -gcodeview -O2 -DEFI_DEBUG
+		   -g -gcodeview -O2
+
+ifneq ($(DEBUG),)
+	CFLAGS  += -DEFI_DEBUG
+endif
 
 CFLAGS		+= -Wno-pointer-to-int-cast -Wno-int-to-pointer-cast
 
