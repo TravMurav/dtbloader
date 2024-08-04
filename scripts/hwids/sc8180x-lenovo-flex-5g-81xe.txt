@@ -1,0 +1,32 @@
+Computer Information
+--------------------
+BiosVendor: LENOVO
+BiosVersion: EACN41WW(V1.13)
+BiosMajorRelease: 1
+BiosMinorRelease: 41
+FirmwareMajorRelease: 01
+FirmwareMinorRelease: 29
+Manufacturer: LENOVO
+Family: Yoga 5G 14Q8CX05
+ProductName: 81XE
+ProductSku: LENOVO_MT_81XE_BU_idea_FM_Yoga 5G 14Q8CX05
+EnclosureKind: 1f
+BaseboardManufacturer: LENOVO
+BaseboardProduct: LNVNB161216
+Hardware IDs
+------------
+{ea646c11-3da1-5c8d-9346-8ff156746650}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{5100eeed-c5e2-5b74-9c24-a22ca0644826}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{ddb3bcda-db7b-579d-9dd9-bcc4f5b052b8}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{fb364c09-efc0-5d16-ac97-0a3e6235b16c}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{7e7007ac-603c-55ef-bb77-3548784b9578}   <- Manufacturer + Family + ProductName + ProductSku
+{566b9ae8-a7fd-5c44-94d6-bac3e4cf38a7}   <- Manufacturer + Family + ProductName
+{6f3bdfb7-f832-5c5f-9777-9e3db35e22a6}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{c4ea686c-c56c-5e8e-a91e-89056683d417}   <- Manufacturer + ProductSku
+{a1a13249-2689-5c6d-a43f-98af040284c4}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{01439aea-e75c-5fbb-8842-18dcd1a7b8b3}   <- Manufacturer + ProductName
+{65ab9f32-bbc8-52d3-87f9-b618fda7c07e}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{41ba2569-88df-57d4-b5e3-350ff985434a}   <- Manufacturer + Family
+{32b7e294-a252-5a72-b3c6-6197f08c64f1}   <- Manufacturer + EnclosureKind
+{71d86d4d-02f8-5566-a7a1-529cef184b7e}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{6de5d951-d755-576b-bd09-c5cf66b27234}   <- Manufacturer
