@@ -242,7 +242,20 @@ EFI_STATUS efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable)
 
 	if (!dev) {
 		Print(L"Failed to detect this device!\n");
+		/*
+		 * Some bootloaders like systemd-boot will stall the boot process
+		 * if some error has happened. Usually we'd want to explicitly error
+		 * out with EFI_UNSUPPORTED but for some distro usecases we need
+		 * to be able to silence this error. Thus we can pretend to be an
+		 * "Initialization driver" and return EFI_ABORTED, in which case spec
+		 * expects this to be an non-error return code and sd-boot will not
+		 * warn and delay.
+		 */
+#ifdef ABORT_IF_UNSUPPORTED
+		return EFI_ABORTED;
+#else
 		return EFI_UNSUPPORTED;
+#endif
 	}
 
 	Print(L"Detected device: %s\n", dev->name);

@@ -23,6 +23,10 @@ ifneq ($(DEBUG),)
 	CFLAGS  += -DEFI_DEBUG
 endif
 
+ifneq ($(ABORT_IF_UNSUPPORTED),)
+	CFLAGS  += -DABORT_IF_UNSUPPORTED
+endif
+
 CFLAGS		+= -Wno-pointer-to-int-cast -Wno-int-to-pointer-cast
 
 LDFLAGS		:= -entry:efi_main -nodefaultlib -debug
