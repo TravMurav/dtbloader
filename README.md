@@ -32,7 +32,7 @@ in `src/devices`. The script will automatically generate a template device descr
 which dtb should be used, run it like this:
 
 ```
-$ sudo scripts/describe_hw.sh -d "qcom/8280xp-lenovo-thinkpad-x13s.dtb"
+$ sudo scripts/describe_hw.sh -d "qcom/sc8280xp-lenovo-thinkpad-x13s.dtb"
 ```
 
 ## Building
