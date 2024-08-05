@@ -170,6 +170,9 @@ static CHAR16 *smbios_to_hashable_string(CHAR8* str)
 	int len, i;
 	CHAR16 *ret;
 
+	if (!str)
+		return "";
+
 	/*
 	 * We need to strip leading and trailing spaces, leading zeroes.
 	 * See fwupd/libfwupdplugin/fu-hwids-smbios.c
