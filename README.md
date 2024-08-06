@@ -60,6 +60,11 @@ To manually install dtbloader, copy the file to ESP, boot into efi shell, then:
 Shell:\> fs0:
 # Install the driver into the boot order
 fs0:\> bcfg driver add 1 dtbloader.efi "dtbloader"
+# On some devices you may need to add optional data
+# to the driver entry for firmware to load it.
+fs0:\> echo none > tmp.txt
+fs0:\> bcfg driver -opt 1 tmp.txt
+fs0:\> rm tmp.txt
 ```
 
 Alternatively, some bootloaders such as systemd-boot provide driver boot directory. If you use sd-boot,
