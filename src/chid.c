@@ -219,12 +219,18 @@ static EFI_STATUS populate_smbios_info(struct smbios_info *info)
 
 static void free_smbios_info(struct smbios_info *info)
 {
-	FreePool(info->Manufacturer);
-	FreePool(info->ProductName);
-	FreePool(info->ProductSku);
-	FreePool(info->Family);
-	FreePool(info->BaseboardProduct);
-	FreePool(info->BaseboardManufacturer);
+	if (info->Manufacturer)
+		FreePool(info->Manufacturer);
+	if (info->ProductName)
+		FreePool(info->ProductName);
+	if (info->ProductSku)
+		FreePool(info->ProductSku);
+	if (info->Family)
+		FreePool(info->Family);
+	if (info->BaseboardProduct)
+		FreePool(info->BaseboardProduct);
+	if (info->BaseboardManufacturer)
+		FreePool(info->BaseboardManufacturer);
 }
 
 static EFI_STATUS get_chid(struct smbios_info *info, int id, EFI_GUID *chid)
