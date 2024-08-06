@@ -171,7 +171,7 @@ static CHAR16 *smbios_to_hashable_string(CHAR8* str)
 	CHAR16 *ret;
 
 	if (!str)
-		return "";
+		return L"";
 
 	/*
 	 * We need to strip leading and trailing spaces, leading zeroes.
