@@ -19,6 +19,8 @@ CFLAGS		:= -target $(ARCH)-windows \
 		   -I$(GNUEFI_DIR)/inc -I$(LIBFDT_DIR) -I$(CURDIR)/src/include \
 		   -g -gcodeview -O2
 
+CFLAGS_SRC	:= -Wall
+
 ifneq ($(DEBUG),)
 	CFLAGS  += -DEFI_DEBUG
 endif
@@ -53,7 +55,7 @@ $(O)/dtbloader.efi: $(OBJS) $(LIBEFI) $(LIBFDT)
 $(O)/%.o: %.c
 	@echo [CC] $(if $(findstring external,$@),\($(word 3,$(subst /, ,$(@:$(CURDIR)%=%)))\) )$(notdir $@)
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) $(if $(findstring external,$@), ,$(CFLAGS_SRC)) -c $< -o $@
 
 
 .PHONY: clean
