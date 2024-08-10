@@ -1,0 +1,32 @@
+Computer Information
+--------------------
+BiosVendor: Microsoft Corporation
+BiosVersion: 17.4.235
+BiosMajorRelease: 255
+BiosMinorRelease: 255
+FirmwareMajorRelease: ff
+FirmwareMinorRelease: ff
+Manufacturer: Microsoft Corporation
+Family: Surface
+ProductName: Surface Pro 9
+ProductSku: Surface_Pro_9_With_5G_1996
+EnclosureKind: 9
+BaseboardManufacturer: Microsoft Corporation
+BaseboardProduct: Surface Pro 9
+Hardware IDs
+------------
+{e3d941fa-2bfa-5875-8efd-87ce997f8338}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{a659ee2b-502d-50f7-9921-bdbd34734e0b}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{5caa88bc-ea9b-5d73-a69a-89024bfff854}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{c0cf7078-c325-5cf6-966b-3bbbc155275b}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{6309fbb9-68f4-54f9-bbc9-b3ca9685b48c}   <- Manufacturer + Family + ProductName + ProductSku
+{9d70dcfd-f56b-58bf-b1bd-a1b8f2b0ec7e}   <- Manufacturer + Family + ProductName
+{9bac72c6-83f6-5e21-af8e-bc1f5c2b7cc8}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{94fb24a7-ff7a-5d70-9ac8-518a9e44ea64}   <- Manufacturer + ProductSku
+{009d2337-4f76-514e-b2c1-b2816447b048}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{3a486e6f-3b0a-5603-a483-503381d3d8c3}   <- Manufacturer + ProductName
+{636b6071-7848-50d5-b0b5-6290c49e9306}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{ca2e5189-1d32-509f-88a0-d4ebcc721899}   <- Manufacturer + Family
+{aca387a9-183e-5da9-8f9d-f460c3f50f54}   <- Manufacturer + EnclosureKind
+{7fa0755a-ec45-59cd-a206-bb9a956b030f}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{cc0aea32-ad2c-5013-8bed-cede6be8c9f4}   <- Manufacturer
