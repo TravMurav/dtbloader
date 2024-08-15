@@ -23,8 +23,8 @@ attemtps to simplify running Linux-based or other OS that use DT by providing:
 - <!-- sc8280xp --> Lenovo ThinkPad X13s Gen 1
 - <!-- sc8180x  --> Lenovo Yoga 5G
 - <!-- sdm850   --> Lenovo Yoga C630
-- <!-- x1e80100 --> Lenovo Yoga Slim 7
-- <!-- sc8280xp --> *Microsoft Surface Pro 9 5G*
+- <!-- x1e80100 --> Lenovo Yoga Slim 7x
+- *<!-- sc8280xp --> Microsoft Surface Pro 9 5G*
 
 (Note: Devices marked with *italic* may not be available in upstream Linux or linux-next yet.)
 
