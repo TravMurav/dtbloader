@@ -4,4 +4,4 @@
 
 cd "$(dirname $0)/.." 
 
-grep -h ".dtb" src/devices/* | sed -e 's/.*L"\(.*\)",/\1/' -e 's_\\\\_/_'
+grep -h -E ".dtb +=" src/devices/* | sed -e 's/.*L"\(.*\)",/\1/' -e 's_\\\\_/_' | grep -v Tentative
