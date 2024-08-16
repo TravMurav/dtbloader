@@ -170,8 +170,11 @@ static CHAR16 *smbios_to_hashable_string(CHAR8* str)
 	int len, i;
 	CHAR16 *ret;
 
-	if (!str)
-		return L"";
+	if (!str) {
+		/* User of this function is expected to free the result. */
+		ret = AllocateZeroPool(sizeof(*ret));
+		return ret;
+	}
 
 	/*
 	 * We need to strip leading and trailing spaces, leading zeroes.
