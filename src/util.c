@@ -131,7 +131,8 @@ bool SecureBootEnabled(void)
 		ret = false;
 
 	FreePool(secureboot);
-	FreePool(setupmode);
+	if (setupmode)
+		FreePool(setupmode);
 
 	return ret;
 }
