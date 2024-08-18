@@ -4,20 +4,23 @@
 
 dtb_name="FIXME!"
 hwids_file=""
+name_field="Family"
 
 usage() {
-	echo "Usage: $0 [-h] [-d DTB_NAME] [-f FILE]"
+	echo "Usage: $0 [-h] [-d DTB_NAME] [-f FILE] [-n NAME]"
 	echo "Generate hardware description struct for dtbloader."
 	echo
 	echo "  -d DTB	Set the name of the DTB to use."
 	echo "  -f FILE	Read FILE as fwupdtool hwids output."
+	echo "  -n NAME	Field to use as device name. See below. (default: $name_field)"
 	echo "  -h		This help."
 	echo
+	echo "Possible NAME fields are: 'Family', 'ProductName', 'BaseboardProduct'."
 	echo "By default this tool attempts to survey the device it was run on."
 	echo
 }
 
-while getopts ":d:f:h" opt
+while getopts ":d:f:n:h" opt
 do
 	case $opt in
 		d)
@@ -25,6 +28,9 @@ do
 			;;
 		f)
 			hwids_file="$OPTARG"
+			;;
+		n)
+			name_field="$OPTARG"
 			;;
 		h)
 			usage
@@ -50,7 +56,7 @@ get_field() {
 	echo "$hwids_data" | grep -m1 "$name" | sed 's/.*: //'
 }
 
-var_prefix="$(echo $(get_field "Manufacturer") $(get_field "Family") | tr '[:upper:]' '[:lower:]' | sed 's/\(\W\|-\)/_/g')"
+var_prefix="$(echo $(get_field "Manufacturer") $(get_field "$name_field") | tr '[:upper:]' '[:lower:]' | sed 's/\(\W\|-\)/_/g')"
 
 echo "// SPDX-License-Identifier: BSD-3-Clause"
 echo
@@ -72,7 +78,7 @@ echo "	{ }"
 echo "};"
 echo
 echo "static struct device ""$var_prefix""_dev = {"
-echo "	.name  = L\"$(get_field "Manufacturer") $(get_field "Family")\","
+echo "	.name  = L\"$(get_field "Manufacturer") $(get_field "$name_field")\","
 echo "	.dtb   = L\"$(echo "$dtb_name" | sed 's_[/\\]_\\\\_')\","
 echo "	.hwids = ""$var_prefix""_hwids,"
 echo "};"
