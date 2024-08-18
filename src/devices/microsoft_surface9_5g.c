@@ -3,7 +3,7 @@
 #include <efi.h>
 #include <device.h>
 
-static EFI_GUID microsoft_corporation_surface_hwids[] = {
+static EFI_GUID microsoft_corporation_surface_pro_9_hwids[] = {
 	{ 0xe3d941fa, 0x2bfa, 0x5875, { 0x8e, 0xfd, 0x87, 0xce, 0x99, 0x7f, 0x83, 0x38 } },
 	{ 0xa659ee2b, 0x502d, 0x50f7, { 0x99, 0x21, 0xbd, 0xbd, 0x34, 0x73, 0x4e, 0x0b } },
 	{ 0x5caa88bc, 0xea9b, 0x5d73, { 0xa6, 0x9a, 0x89, 0x02, 0x4b, 0xff, 0xf8, 0x54 } },
@@ -22,9 +22,9 @@ static EFI_GUID microsoft_corporation_surface_hwids[] = {
 	{ }
 };
 
-static struct device microsoft_corporation_surface_dev = {
-	.name  = L"Microsoft Corporation Surface",
+static struct device microsoft_corporation_surface_pro_9_dev = {
+	.name  = L"Microsoft Corporation Surface Pro 9",
 	.dtb   = L"qcom\\sc8280xp-microsoft-surface-pro-9-5G.dtb", /* Tentative. */
-	.hwids = microsoft_corporation_surface_hwids,
+	.hwids = microsoft_corporation_surface_pro_9_hwids,
 };
-DEVICE_DESC(microsoft_corporation_surface_dev);
+DEVICE_DESC(microsoft_corporation_surface_pro_9_dev);
