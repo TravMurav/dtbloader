@@ -50,10 +50,12 @@ git submodule update --init --recursive
 Then build the project:
 
 ```
-make
+make -j$(nproc)
 ```
 
-Note that dtbloader requires `clang` to be built. Use `make DEBUG=1` to enable additional log messages.
+Use `make DEBUG=1` to enable additional log messages.
+
+Note that dtbloader uses `clang` and `lld` to be built. You may also need additional tools from `llvm` package.
 
 ## Usage
 
