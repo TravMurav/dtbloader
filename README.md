@@ -25,6 +25,7 @@ attemtps to simplify running Linux-based or other OS that use DT by providing:
 - <!-- sdm850   --> Lenovo Yoga C630
 - <!-- x1e80100 --> Lenovo Yoga Slim 7x
 - *<!-- sc8280xp --> Microsoft Surface Pro 9 5G*
+- *<!-- sc8280xp --> Microsoft Windows Dev Kit 2023*
 
 (Note: Devices marked with *italic* may not be available in upstream Linux or linux-next yet.)
 

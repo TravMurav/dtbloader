@@ -1,0 +1,32 @@
+Computer Information
+--------------------
+BiosVendor: Microsoft Corporation
+BiosVersion: 12.6.235
+BiosMajorRelease: 255
+BiosMinorRelease: 255
+FirmwareMajorRelease: ff
+FirmwareMinorRelease: ff
+Manufacturer: Microsoft Corporation
+Family: Surface
+ProductName: Windows Dev Kit 2023
+ProductSku: 2043
+EnclosureKind: 3
+BaseboardManufacturer: Microsoft Corporation
+BaseboardProduct: Windows Dev Kit 2023
+Hardware IDs
+------------
+{69ba0503-ca94-5fa3-b78c-5fa21a66c620}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{ad2ee931-a048-5253-b350-98c482670765}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{5bd24fc5-5edb-51f6-82e6-31a9ef954c5b}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{d67e799e-2ba7-555a-a874-a0523a8b3b11}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{813677fa-6d11-5756-a44d-dde0f552d3f6}   <- Manufacturer + Family + ProductName + ProductSku
+{ce83144b-b123-59e5-8a9a-0c1a13643fc4}   <- Manufacturer + Family + ProductName
+{53b87f48-fc47-54e9-ade5-f1a95e885681}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{046fefee-341b-5c40-b0a3-1c647d31b500}   <- Manufacturer + ProductSku
+{f59639f4-4970-5706-9a75-519dd059f69e}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{08f06457-aa19-51c5-be4c-0087ce4fa2ed}   <- Manufacturer + ProductName
+{11b80238-dbee-57bc-8b26-83c9e5b4057d}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{ca2e5189-1d32-509f-88a0-d4ebcc721899}   <- Manufacturer + Family
+{7ce6d32b-3711-5701-b31a-cc79f61a5719}   <- Manufacturer + EnclosureKind
+{2c1da402-8915-572d-a493-c966d32f96cb}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{cc0aea32-ad2c-5013-8bed-cede6be8c9f4}   <- Manufacturer
