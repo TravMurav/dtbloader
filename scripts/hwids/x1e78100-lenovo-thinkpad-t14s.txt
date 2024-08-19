@@ -1,0 +1,38 @@
+Computer Information
+--------------------
+BiosVendor: LENOVO
+BiosVersion: N42ET53W (1.27 )
+BiosMajorRelease: 1
+BiosMinorRelease: 27
+FirmwareMajorRelease: 01
+FirmwareMinorRelease: 0f
+Manufacturer: LENOVO
+Family: ThinkPad T14s Gen 6
+ProductName: 21N10001US
+ProductSku: LENOVO_MT_21N1_BU_Think_FM_ThinkPad T14s Gen 6
+EnclosureKind: a
+BaseboardManufacturer: LENOVO
+BaseboardProduct: 21N10001US
+Hardware IDs
+------------
+{c81fee2f-cf41-5d5a-8c7b-afd6585b1d81}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{a9b59fea-e841-508a-a245-3a2d8d2802de}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{74593764-b6b9-58e9-bedc-93ebbb1eb057}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{e5d83424-0ecb-5632-b7b1-500f04e82725}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{76032e78-67a8-5dab-8512-157bfcfb8f75}   <- Manufacturer + Family + ProductName + ProductSku
+{dd83478e-e01b-5631-ae74-92ae275a9b4e}   <- Manufacturer + Family + ProductName
+{791ecd9d-1547-58e6-b72a-5ce417b729dd}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{8c602147-5363-5374-859e-8b7fe2d4d3ce}   <- Manufacturer + ProductSku
+{498d60ae-9b1d-5b67-8abd-af571babfa94}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{acbac5af-aa6a-5690-88f3-e910f04a7ead}   <- Manufacturer + ProductName
+{5180bc01-5d18-5870-b955-969da38b2647}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{431ff9e9-cd92-51c1-8917-46b0a0ef147c}   <- Manufacturer + Family
+{e093d715-70f7-51f4-b6c8-b4a7e31def85}   <- Manufacturer + EnclosureKind
+{c124cecf-e6dc-5d35-a320-712980cfb68d}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{6de5d951-d755-576b-bd09-c5cf66b27234}   <- Manufacturer
+Extra Hardware IDs
+------------------
+{19b622ef-27fe-5c2e-bc53-13a79b862c65}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor
+{ac09e50f-9b3b-53c0-9752-377c3a0baaa0}   <- Manufacturer + Family + ProductName + BiosVendor
+{99431f53-09a1-5869-be79-65e2fa3f341d}   <- Manufacturer + BiosVendor
+
