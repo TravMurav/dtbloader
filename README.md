@@ -20,6 +20,7 @@ attemtps to simplify running Linux-based or other OS that use DT by providing:
 - <!-- sc7180   --> Acer Aspire 1
 - <!-- x1e80100 --> ASUS Vivobook S 15
 - <!-- sc8180x  --> Lenovo Flex 5G
+- <!-- msm8998 --> Lenovo Miix 630
 - *<!-- x1e78100 --> Lenovo ThinkPad T14s Gen 6*
 - <!-- sc8280xp --> Lenovo ThinkPad X13s Gen 1
 - <!-- sc8180x  --> Lenovo Yoga 5G

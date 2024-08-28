@@ -1,0 +1,33 @@
+Computer Information
+--------------------
+BiosVendor: LENOVO
+BiosVersion: 8WCN25WW
+Manufacturer: LENOVO
+Family: Miix 630
+ProductName: 81F1
+ProductSku: LENOVO_MT_81F1_BU_idea_FM_Miix 630
+EnclosureKind: 32
+BaseboardManufacturer: LENOVO
+BaseboardProduct: LNVNB161216
+Hardware IDs
+------------
+not available as 'BiosMajorRelease' unknown
+not available as 'BiosMajorRelease' unknown
+not available as 'BiosMajorRelease' unknown
+{16a55446-eba9-5f97-80e3-5e39d8209bc3}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{c4c9a6be-5383-5de7-af35-c2de505edec8}   <- Manufacturer + Family + ProductName + ProductSku
+{14f581d2-d059-5cb2-9f8b-56d8be7932c9}   <- Manufacturer + Family + ProductName
+{a51054fb-5eef-594a-a5a0-cd87632d0aea}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{307ab358-ed84-57fe-bf05-e9195a28198d}   <- Manufacturer + ProductSku
+{7e613574-5445-5797-9567-2d0ed86e6ffa}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{b0f4463c-f851-5ec3-b031-2ccb873a609a}   <- Manufacturer + ProductName
+{08b75d1f-6643-52a1-9bdd-071052860b33}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{dacf4a59-8e87-55c5-8b93-6912ded6bf7f}   <- Manufacturer + Family
+{d0a8deb1-4cb5-50cd-bdda-595cfc13230c}   <- Manufacturer + EnclosureKind
+{71d86d4d-02f8-5566-a7a1-529cef184b7e}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{6de5d951-d755-576b-bd09-c5cf66b27234}   <- Manufacturer
+Extra Hardware IDs
+------------------
+{34df58d6-b605-50aa-9313-9b34f5c4b6fc}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor
+{e0a96696-f0a6-5466-a6db-207fbe8bae3c}   <- Manufacturer + Family + ProductName + BiosVendor
+{99431f53-09a1-5869-be79-65e2fa3f341d}   <- Manufacturer + BiosVendor
