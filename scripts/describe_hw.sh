@@ -67,7 +67,8 @@ echo "static EFI_GUID ""$var_prefix""_hwids[] = {"
 
 # If it's stupid but it works...
 echo "$hwids_data" \
-	| sed -n '18,32 p' | sed \
+	| grep -E "^{" \
+	| sed \
 		-e 's/^/\t/' \
 		-e 's/   <-.*//' \
 		-e 's/-/, 0x/g' \
