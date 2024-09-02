@@ -24,7 +24,7 @@ static EFI_GUID lenovo_thinkpad_t14s_gen_6_hwids[] = {
 
 static struct device lenovo_thinkpad_t14s_gen_6_dev = {
 	.name  = L"LENOVO ThinkPad T14s Gen 6",
-	.dtb   = L"qcom\\x1e78100-lenovo-thinkpad-t14s.dtb", /* Tentative. */
+	.dtb   = L"qcom\\x1e78100-lenovo-thinkpad-t14s.dtb",
 	.hwids = lenovo_thinkpad_t14s_gen_6_hwids,
 };
 DEVICE_DESC(lenovo_thinkpad_t14s_gen_6_dev);
