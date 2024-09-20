@@ -1,0 +1,33 @@
+Computer Information
+--------------------
+BiosVendor: Insyde
+BiosVersion: F.09
+Manufacturer: HP
+Family: 103C_5335M8 HP OmniBook X
+ProductName: HP OmniBook X Laptop 14-fe0xxx
+ProductSku: A3NY2EA#ABD
+EnclosureKind: 10
+BaseboardManufacturer: HP
+BaseboardProduct: 8CBE
+Hardware IDs
+------------
+not available as 'BiosMajorRelease' unknown
+not available as 'BiosMajorRelease' unknown
+not available as 'BiosMajorRelease' unknown
+{045dfd0f-068b-5e57-86bd-f41b4b906006}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{ca5dab4f-a301-53c6-b753-c2db56172e0a}   <- Manufacturer + Family + ProductName + ProductSku
+{811126e6-4aee-5f9e-827d-d0f12f6a6f00}   <- Manufacturer + Family + ProductName
+{6a4511bc-0a3b-5b10-9c8b-dbcb834ecd83}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{abb2ffec-2acd-5750-8dfd-c3845fd4bf2a}   <- Manufacturer + ProductSku
+{1a192aee-2cfd-5ab5-95f9-8093218a48ef}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{eaab52c6-ed22-5e1b-b788-fc5a0531291d}   <- Manufacturer + ProductName
+{848aeb1d-302b-5b6b-9109-0f4632535915}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{5d43face-6ba8-5d41-8914-12f3410bbcf9}   <- Manufacturer + Family
+{4c84c882-b54c-58d5-b412-26bcdf254c3e}   <- Manufacturer + EnclosureKind
+{2ae478e9-ef65-5485-bb06-a233136e53c7}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{93f84748-c854-5d6b-b78a-13c2361e0758}   <- Manufacturer
+Extra Hardware IDs
+------------------
+{54500b82-f7ae-592d-ae68-8c8e362a1475}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor
+{68d24be5-01b6-5d88-83fb-df2bcfa879aa}   <- Manufacturer + Family + ProductName + BiosVendor
+{ad0b7f58-06f2-50b9-856b-343f54261425}   <- Manufacturer + BiosVendor
