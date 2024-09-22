@@ -1,0 +1,32 @@
+Computer Information
+--------------------
+BiosVendor: Dell Inc.
+BiosVersion: 2.0.0
+BiosMajorRelease: 2
+BiosMinorRelease: 0
+FirmwareMajorRelease: ff
+FirmwareMinorRelease: ff
+Manufacturer: Dell Inc.
+Family: XPS
+ProductName: XPS 13 9345
+ProductSku: C69
+EnclosureKind: a
+BaseboardManufacturer: Dell Inc.
+BaseboardProduct: DXPNM
+Hardware IDs
+------------
+{eedeb5d9-1a0e-56e6-9137-eb6a723e58d1}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{1eb87d70-2f37-5f18-85de-30e46c17d540}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{1d1baf60-e2f3-5821-9d98-19a131bf8d93}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{7c7c2920-cb59-56ad-bc8a-939e803b0192}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{940c6349-f0a5-54ba-8deb-10e709e0b76c}   <- Manufacturer + Family + ProductName + ProductSku
+{3b9a1d76-f2e8-52e8-84de-14c5942b3d41}   <- Manufacturer + Family + ProductName
+{3c2649a7-2275-5130-a0c4-cc5f9809a2c1}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{36e8dd88-512d-5a74-86a4-039333f9e15a}   <- Manufacturer + ProductSku
+{e656b5f2-69c3-55da-bf22-4dd58d5f6d4f}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{bc685cec-e979-5cb9-bf02-e15586c7cb4b}   <- Manufacturer + ProductName
+{81972cb8-6fc7-5e08-b140-b0063ed4fefa}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{61178075-a8fd-563c-9045-44227d8c121f}   <- Manufacturer + Family
+{5c163113-9296-5c8d-a92d-ae04eb59a0f7}   <- Manufacturer + EnclosureKind
+{1302793c-52b1-5354-b1cf-f2cd9206c157}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{85d38fda-fc0e-5c6f-808f-076984ae7978}   <- Manufacturer
