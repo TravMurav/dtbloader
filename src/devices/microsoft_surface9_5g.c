@@ -24,7 +24,7 @@ static EFI_GUID microsoft_corporation_surface_pro_9_hwids[] = {
 
 static struct device microsoft_corporation_surface_pro_9_dev = {
 	.name  = L"Microsoft Corporation Surface Pro 9",
-	.dtb   = L"qcom\\sc8280xp-microsoft-surface-pro-9-5G.dtb", /* Tentative. */
+	.dtb   = L"qcom\\sc8280xp-microsoft-arcata.dtb",
 	.hwids = microsoft_corporation_surface_pro_9_hwids,
 };
 DEVICE_DESC(microsoft_corporation_surface_pro_9_dev);
