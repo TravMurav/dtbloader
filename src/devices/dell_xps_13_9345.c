@@ -24,7 +24,7 @@ static EFI_GUID dell_inc__xps_13_9345_hwids[] = {
 
 static struct device dell_inc__xps_13_9345_dev = {
 	.name  = L"Dell Inc. XPS 13 9345",
-	.dtb   = L"qcom\\x1e80100-dell-tributo-13.dtb",
+	.dtb   = L"qcom\\x1e80100-dell-tributo-13.dtb", /* Tentative. */
 	.hwids = dell_inc__xps_13_9345_hwids,
 };
 DEVICE_DESC(dell_inc__xps_13_9345_dev);
