@@ -1,0 +1,30 @@
+Computer Information
+--------------------
+BiosVendor: Qualcomm Technologies, Inc.
+BiosVersion: 6.0.240901.BOOT.MXF.2.4-00468-HAMOA-1
+Manufacturer: Qualcomm
+Family: SCP_HAMOA
+ProductName: Snapdragon-Devkit
+ProductSku: 6
+Hardware IDs
+------------
+not available as 'BiosMajorRelease' unknown
+not available as 'BiosMajorRelease' unknown
+not available as 'BiosMajorRelease' unknown
+not available as 'BaseboardManufacturer' unknown
+{baa7a649-12d8-56c7-93c5-a4e10f4852be}   <- Manufacturer + Family + ProductName + ProductSku
+{c8e75ab8-555c-5952-a3e3-5b607bea031d}   <- Manufacturer + Family + ProductName
+not available as 'BaseboardManufacturer' unknown
+{4bb05d50-6c4f-525d-a9ec-8924afd6edea}   <- Manufacturer + ProductSku
+not available as 'BaseboardManufacturer' unknown
+{830bd4a2-2498-55cf-b561-48f7dc5f4820}   <- Manufacturer + ProductName
+not available as 'BaseboardManufacturer' unknown
+{b36a40fa-4640-5b1b-8fa1-6dbde103c80d}   <- Manufacturer + Family
+not available as 'EnclosureKind' unknown
+not available as 'BaseboardManufacturer' unknown
+{0d601876-0ac6-533e-8386-3a58203d8c33}   <- Manufacturer
+Extra Hardware IDs
+------------------
+{f37dc44b-0be4-5a70-86bd-81f3dacff2e9}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor
+{9cba20d0-17ad-559f-94cd-cfcbbf5f71f5}   <- Manufacturer + Family + ProductName + BiosVendor
+{d86bea02-5d71-5ee5-98dc-4f74d5777dde}   <- Manufacturer + BiosVendor
