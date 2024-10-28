@@ -194,6 +194,7 @@ EFI_STATUS dt_set_default_mac(struct device *dev, void *dtb)
 	const char * const mac_compatibles[] = {
 		"qcom,wcnss-wlan",
 		"qcom,wcn3990-wifi",
+		"pci17cb,1103",
 	};
 	const char * const bd_compatibles[] = {
 		"qcom,wcnss-bt",
