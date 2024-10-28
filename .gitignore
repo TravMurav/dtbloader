@@ -1,2 +1,5 @@
 build*/
 release/
+
+.cache/
+compile_commands.json
