@@ -28,6 +28,6 @@ static struct device acer_aspire_1_dev = {
 	.dtb   = L"qcom\\sc7180-acer-aspire1.dtb",
 	.hwids = acer_aspire_1_hwids,
 
-	.dt_fixup = dt_set_default_mac,
+	.dt_fixup = qcom_dt_set_dpp_mac,
 };
 DEVICE_DESC(acer_aspire_1_dev);
