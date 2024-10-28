@@ -40,6 +40,6 @@ static struct device lenovo_thinkpad_x13s_gen_1_dev = {
 	.dtb   = L"qcom\\sc8280xp-lenovo-thinkpad-x13s.dtb",
 	.hwids = lenovo_thinkpad_x13s_gen_1_hwids,
 
-	.dt_fixup = dt_set_default_mac,
+	.dt_fixup = qcom_dt_set_dpp_mac,
 };
 DEVICE_DESC(lenovo_thinkpad_x13s_gen_1_dev);
