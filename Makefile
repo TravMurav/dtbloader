@@ -42,6 +42,7 @@ OBJS := \
 	$(O)/src/device.o \
 	$(O)/src/util.o \
 	$(O)/src/chid.o \
+	$(O)/src/qcom.o \
 	$(DEVICE_SRCS:%.c=$(O)/src/devices/%.o)
 
 

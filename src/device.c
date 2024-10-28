@@ -123,8 +123,6 @@ EFI_STATUS get_board_stable_hash(EFI_SHA1_HASH *hash, CHAR8 *key)
 	return status;
 }
 
-#define MAC_ADDR_SIZE		6
-
 static bool dt_check_existing_mac_prop(void *dtb, int node, const char *prop)
 {
 	const uint8_t *val;
@@ -153,8 +151,8 @@ static bool dt_check_existing_mac_prop(void *dtb, int node, const char *prop)
  * @prop:	 Name of the prop to add (i.e. "local-mac-address")
  * @mac:	 Raw MAC value to add.
  */
-static EFI_STATUS dt_update_mac(void *dtb, const char * const compatibles[], unsigned num,
-				const char *prop, UINT8 mac[MAC_ADDR_SIZE])
+EFI_STATUS dt_update_mac(void *dtb, const char * const compatibles[], unsigned num,
+			 const char *prop, UINT8 mac[MAC_ADDR_SIZE])
 {
 	unsigned i;
 
