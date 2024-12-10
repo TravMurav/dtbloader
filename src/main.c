@@ -201,6 +201,9 @@ EFI_STATUS efi_dt_fixup(EFI_DT_FIXUP_PROTOCOL *this, void *dtb, UINTN *size, UIN
 	if (!dev)
 		return EFI_UNSUPPORTED;
 
+	if (!flags || flags & ~(EFI_DT_APPLY_FIXUPS | EFI_DT_RESERVE_MEMORY))
+		return EFI_INVALID_PARAMETER;
+
 	if (fdt_check_header(dtb))
 		return EFI_INVALID_PARAMETER;
 
