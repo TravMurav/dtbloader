@@ -20,7 +20,7 @@ attemtps to simplify running Linux-based or other OS that use DT by providing:
 - <!-- sc7180   --> Acer Aspire 1
 - <!-- x1e80100 --> ASUS Vivobook S 15
 - <!-- x1e80100 --> Dell XPS 13 9345
-- *<!-- x1e80100 --> HP Omnibook X 14*
+- <!-- x1e80100 --> HP Omnibook X 14
 - <!-- sc8180x  --> Lenovo Flex 5G
 - <!-- msm8998 --> Lenovo Miix 630
 - <!-- x1e78100 --> Lenovo ThinkPad T14s Gen 6
@@ -29,7 +29,7 @@ attemtps to simplify running Linux-based or other OS that use DT by providing:
 - <!-- sdm850   --> Lenovo Yoga C630
 - <!-- x1e80100 --> Lenovo Yoga Slim 7x
 - <!-- sc8280xp --> Microsoft Surface Pro 9 5G
-- *<!-- sc8280xp --> Microsoft Windows Dev Kit 2023*
+- <!-- sc8280xp --> Microsoft Windows Dev Kit 2023
 - <!-- x1e001de --> QTI Snapdragon Devkit for Windows (x1e)
 
 (Note: Devices marked with *italic* may not be available in upstream Linux or linux-next yet.)
