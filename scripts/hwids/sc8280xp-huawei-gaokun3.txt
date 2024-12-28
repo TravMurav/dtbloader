@@ -1,0 +1,38 @@
+Computer Information
+--------------------
+BiosVendor: HUAWEI
+BiosVersion: 2.16
+BiosMajorRelease: 2
+BiosMinorRelease: 16
+FirmwareMajorRelease: 02
+FirmwareMinorRelease: 10
+Manufacturer: HUAWEI
+Family: MateBook E
+ProductName: GK-W7X
+ProductSku: C233
+EnclosureKind: 20
+BaseboardManufacturer: HUAWEI
+BaseboardProduct: GK-W7X-PCB
+Hardware IDs
+------------
+{80c86c24-c7a7-5714-abf2-4c48f348cecc}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{1c2effc1-1038-584d-ae8b-7c912c8e9504}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{6eb75906-3a4e-5de4-94c5-374d8f9723e5}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{4f04f31f-17f0-583f-802f-82c3a0b34128}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{e1b94e53-0f20-5d01-abfc-cfb348544a31}   <- Manufacturer + Family + ProductName + ProductSku
+{b866fc5c-261b-56d8-99e8-03ea0646af8f}   <- Manufacturer + Family + ProductName
+{d8846172-f0a0-55ba-bf41-55641f588ea7}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{7ea8b73b-2cbb-562b-aecc-7f0f64c42630}   <- Manufacturer + ProductSku
+{3eb6683b-0153-5365-81c6-cc599783e9c7}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{e5a0ed2b-7fed-5e2d-94ed-43dbaf0b9ccc}   <- Manufacturer + ProductName
+{0c78ef16-4fe0-5e33-908e-b038949ee608}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{8187555f-3681-5463-a0fa-e6b74e49d4c1}   <- Manufacturer + Family
+{39bed59d-bfe0-5938-9a76-b2f4739af786}   <- Manufacturer + EnclosureKind
+{c562b393-1c28-5cc3-a77c-c13c798e5698}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{0df4aa3f-2706-51d4-9296-80119e47f1e1}   <- Manufacturer
+Extra Hardware IDs
+------------------
+{e98c95a8-b50e-5d8b-b2db-c679a39163df}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor
+{13311789-793f-5d95-942c-3b6414a8ad1a}   <- Manufacturer + Family + ProductName + BiosVendor
+{04798471-7c9b-5189-b99b-4d19e1a6fa89}   <- Manufacturer + BiosVendor
+
