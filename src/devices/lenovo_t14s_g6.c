@@ -1,7 +1,66 @@
 // SPDX-License-Identifier: BSD-3-Clause
+/* Copyright (c) 2025 Nikita Travkin <nikita@trvn.ru> */
 
 #include <efi.h>
+#include <efilib.h>
 #include <device.h>
+
+/*
+ * https://github.com/aarch64-laptops/build/blob/master/misc/lenovo-thinkpad-t14s-120hz-64gb/acpi/dsdt.dsl
+ *
+ * Scope (\_SB)
+ * {
+ *     OperationRegion (MNVS, SystemMemory, 0xD6CF5018, 0x6000)
+ *     (...)
+ * }
+ */
+#define T14S_MVNS_BASE      0xD6CF5018
+#define T14S_MVNS_SIZE      0x6000
+
+#pragma pack(1)
+struct t14s_mvns {
+	uint8_t  und0[0xf14];
+	uint8_t  und1[7];
+	uint8_t  vedx[128];
+	uint8_t  shdw;
+	uint16_t tpid;
+	uint8_t  tpad;
+	uint16_t tdvi; /* touchpad vid */
+	uint16_t tdpi; /* touchpad pid */
+	uint16_t tlvi; /* touchscreen vid */
+	uint16_t tlpi; /* touchscreen pid */
+	uint8_t  epao;
+	uint8_t  tlas;
+	uint8_t  fadm;
+	uint8_t  vpid; /* panel id (oled=4) */
+};
+#pragma options align=reset
+
+_Static_assert(T14S_MVNS_BASE + offsetof(struct t14s_mvns, und1) == 0xd6cf5f2c, "");
+_Static_assert(T14S_MVNS_BASE + offsetof(struct t14s_mvns, vedx) == 0xd6cf5f2c + 7, "");
+_Static_assert(T14S_MVNS_BASE + offsetof(struct t14s_mvns, shdw) == 0xd6cf5fac + 7, "");
+_Static_assert(T14S_MVNS_BASE + offsetof(struct t14s_mvns, tpid) == 0xd6cf5fac + 8, "");
+_Static_assert(T14S_MVNS_BASE + offsetof(struct t14s_mvns, tpad) == 0xd6cf5fac + 10, "");
+_Static_assert(T14S_MVNS_BASE + offsetof(struct t14s_mvns, tdvi) == 0xd6cf5fac + 11, "");
+_Static_assert(T14S_MVNS_BASE + offsetof(struct t14s_mvns, tlpi) == 0xd6cf5fbc + 1, "");
+_Static_assert(T14S_MVNS_BASE + offsetof(struct t14s_mvns, fadm) == 0xd6cf5fbc + 5, "");
+
+
+static EFI_STATUS t14s_is_oled(struct device *dev)
+{
+	struct t14s_mvns *mvns;
+
+	/*
+	 * This is theoretically not very safe and nice as we blatantly
+	 * hardcode some random address we found in acpi tables and read
+	 * from it... The hope here is Lenovo will be too lazy to ever
+	 * change this struct and relevant acpi structure layout.
+	 */
+	mvns = (void*)(uintptr_t)T14S_MVNS_BASE;
+
+	/* Panel XML with index 4 has Backlight Type = 5 and not 1(pmic pwm). */
+	return (mvns->vpid == 4 ? EFI_SUCCESS : EFI_UNSUPPORTED);
+}
 
 static EFI_GUID lenovo_thinkpad_t14s_gen_6_hwids[] = {
 	{ 0xc81fee2f, 0xcf41, 0x5d5a, { 0x8c, 0x7b, 0xaf, 0xd6, 0x58, 0x5b, 0x1d, 0x81 } },
@@ -22,9 +81,18 @@ static EFI_GUID lenovo_thinkpad_t14s_gen_6_hwids[] = {
 	{ }
 };
 
+static struct device lenovo_thinkpad_t14s_gen_6_oled_dev = {
+	.name  = L"LENOVO ThinkPad T14s Gen 6 (OLED)",
+	.dtb   = L"qcom\\x1e78100-lenovo-thinkpad-t14s-oled.dtb",
+	.hwids = lenovo_thinkpad_t14s_gen_6_hwids,
+
+	.extra_match = t14s_is_oled,
+};
+DEVICE_DESC(lenovo_thinkpad_t14s_gen_6_oled_dev);
+
 static struct device lenovo_thinkpad_t14s_gen_6_dev = {
-	.name  = L"LENOVO ThinkPad T14s Gen 6",
+	.name  = L"LENOVO ThinkPad T14s Gen 6 (IPS)",
 	.dtb   = L"qcom\\x1e78100-lenovo-thinkpad-t14s.dtb",
 	.hwids = lenovo_thinkpad_t14s_gen_6_hwids,
 };
-DEVICE_DESC(lenovo_thinkpad_t14s_gen_6_dev);
+DEVICE_DESC_END(lenovo_thinkpad_t14s_gen_6_dev);
