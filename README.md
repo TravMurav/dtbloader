@@ -19,6 +19,7 @@ attemtps to simplify running Linux-based or other OS that use DT by providing:
 
 - <!-- sc7180   --> Acer Aspire 1
 - <!-- x1e80100 --> ASUS Vivobook S 15
+- *<!-- x1p42100 --> ASUS Zenbook A14 UX3407QA*
 - <!-- x1e80100 --> Dell XPS 13 9345
 - <!-- x1e80100 --> HP Omnibook X 14
 - <!-- sc8280xp --> Huawei Matebook E Go
