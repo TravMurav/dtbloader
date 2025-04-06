@@ -14,7 +14,7 @@
 #pragma section(".devs", read)
 
 __declspec(allocate(".devs$a")) struct device *__start_dtbloader_dev = NULL;
-__declspec(allocate(".devs$c")) struct device *__stop_dtbloader_dev = NULL;
+__declspec(allocate(".devs$d")) struct device *__stop_dtbloader_dev = NULL;
 
 
 /**
@@ -31,7 +31,17 @@ struct device *match_device(void)
 	struct device **dev;
 	static struct device *cached_dev = NULL;
 	EFI_GUID hwids[15] = {0};
-	int priority[] = {3, 6, 8, 10, 4, 5 , 7, 9, 11}; /* From most to least specific. */
+	int priority[] = { /* From most to least specific. */
+		3,  /* Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct */
+		6,  /* Manufacturer +                        ProductSku + BaseboardManufacturer + BaseboardProduct */
+		8,  /* Manufacturer +          ProductName +              BaseboardManufacturer + BaseboardProduct */
+		10, /* Manufacturer + Family +                            BaseboardManufacturer + BaseboardProduct */
+		4,  /* Manufacturer + Family + ProductName + ProductSku */
+		5,  /* Manufacturer + Family + ProductName */
+		7,  /* Manufacturer +                        ProductSku */
+		9,  /* Manufacturer +          ProductName */
+		11, /* Manufacturer + Family */
+	};
 	int i, j;
 
 	if (cached_dev)
@@ -47,6 +57,9 @@ struct device *match_device(void)
 		for (dev = &__start_dtbloader_dev + 1; dev < &__stop_dtbloader_dev; dev++) {
 			for (j = 0; (*dev)->hwids[j].Data1; ++j) {
 				if (!CompareGuid(&hwids[i], &(*dev)->hwids[j])) {
+					if ((*dev)->extra_match && (*dev)->extra_match(*dev) != EFI_SUCCESS)
+						continue;
+
 					cached_dev = *dev;
 					return *dev;
 				}
