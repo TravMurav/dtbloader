@@ -112,8 +112,8 @@ static EFI_STATUS populate_raw_smbios_info(struct raw_smbios_info *info)
 {
 	EFI_STATUS status;
 
-	SMBIOS_STRUCTURE_TABLE      *SmbiosTable;
-	SMBIOS3_STRUCTURE_TABLE     *Smbios3Table;
+	SMBIOS_STRUCTURE_TABLE      *SmbiosTable = NULL;
+	SMBIOS3_STRUCTURE_TABLE     *Smbios3Table = NULL;
 	SMBIOS_STRUCTURE_POINTER    Smbios;
 
 	status = LibGetSystemConfigurationTable(&SMBIOSTableGuid, (VOID**)&SmbiosTable);
