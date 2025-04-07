@@ -1,0 +1,21 @@
+name: Run in QEMU
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: "Run in QEMU"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install additional build dependencies
+        run: sudo apt-get install -yqq llvm lld device-tree-compiler qemu-system-arm qemu-efi-aarch64
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Build dtbloader
+        run: git clean -dxf && make -j$(nproc) DEBUG=1 CFLAGS_SRC="-Wall -Werror -fsanitize=undefined -fsanitize-trap=all"
+      - name: Prepare ESP
+        run: dtc .ci/dummy.dts -o build-aarch64/msm8998-lenovo-miix-630.dtb
+      - name: Run QEMU
+        run: ./scripts/run_qemu.sh | tee log.txt
+      - name: Check the log
+        run: "grep -q 'Detected device: LENOVO Miix 630' log.txt && ! grep -q 'Synchronous Exception' log.txt"

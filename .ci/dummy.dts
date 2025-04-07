@@ -1,0 +1,8 @@
+
+/dts-v1/;
+
+/ {
+	model = "Lenovo Miix 630";
+	compatible = "lenovo,miix-630", "qcom,msm8998";
+	chassis-type = "convertible";
+};
