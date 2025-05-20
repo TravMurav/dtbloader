@@ -1,0 +1,33 @@
+Computer Information
+--------------------
+BiosVendor: Dell Inc.
+BiosVersion: 2.8.0
+Manufacturer: Dell Inc.
+Family: Latitude
+ProductName: Latitude 7455
+ProductSku: 0C85
+EnclosureKind: 10
+BaseboardManufacturer: Dell Inc.
+BaseboardProduct: 0FK7MX
+Hardware IDs
+------------
+not available as 'BiosMajorRelease' unknown
+not available as 'BiosMajorRelease' unknown
+not available as 'BiosMajorRelease' unknown
+{903e3a6f-e14b-5643-9d55-244f917aadb6}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{59e5c810-9e60-5a89-8665-db36c56b34d6}   <- Manufacturer + Family + ProductName + ProductSku
+{2b9277cd-85b1-51ee-9a38-d477632532da}   <- Manufacturer + Family + ProductName
+{6e01222b-b2aa-531e-b95f-0e4b2a063364}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{93055898-8c85-50e7-adde-8115f194579a}   <- Manufacturer + ProductSku
+{b3e5b59d-84ae-597d-9222-8a4d48480bc3}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{4f73f73b-e639-5353-bbf7-d851e48f18fc}   <- Manufacturer + ProductName
+{68822228-a3e0-5b12-942d-9408751405d1}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{41b0b5d7-ad12-5d86-9a3d-826f9b20adcc}   <- Manufacturer + Family
+{a26f8d6d-d9ab-5705-939a-aec8fed37cd4}   <- Manufacturer + EnclosureKind
+{cb846e91-7a9f-564f-8f33-6cf5bc04a5b8}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{85d38fda-fc0e-5c6f-808f-076984ae7978}   <- Manufacturer
+Extra Hardware IDs
+------------------
+{683e4579-8440-5bc1-89ac-dfcd7c25b307}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor
+{fb7493ec-9634-5c5a-9f26-69cbf9b92460}   <- Manufacturer + Family + ProductName + BiosVendor
+{36cb5c6e-fb91-55e9-8077-e004f2b1ddad}   <- Manufacturer + BiosVendor
