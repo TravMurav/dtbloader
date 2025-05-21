@@ -67,7 +67,14 @@ Note that dtbloader uses `clang` and `lld` to be built. You may also need additi
 
 ## Usage
 
-To manually install dtbloader, copy the file to ESP, boot into efi shell, then:
+Some bootloaders such as systemd-boot provide driver boot directory. If you use sd-boot, you may place
+`dtbloader.efi` to ESP as `/EFI/systemd/drivers/dtbloaderaa64.efi` (where `aa64` is the arch suffix).
+
+To instead manually install dtbloader, copy the file to ESP and use `efibootmgr -rcl "dtbloader.efi" -L "dtbloader" -d /dev/nvme0n1 -p 12`
+(replacing 12 with your EFI System Partition number or making `/dev/nvme0n1` match your install disk)
+to add it to the beginning of `DriverOrder`.
+
+Alternatively boot into efi shell, then:
 
 ```
 # Switch to the ESP partition (replace fs0 with yours)
@@ -80,9 +87,6 @@ fs0:\> echo none > tmp.txt
 fs0:\> bcfg driver -opt 1 tmp.txt
 fs0:\> rm tmp.txt
 ```
-
-Alternatively, some bootloaders such as systemd-boot provide driver boot directory. If you use sd-boot,
-you may place `dtbloader.efi` to ESP as `/EFI/systemd/drivers/dtbloaderaa64.efi` (where `aa64` is the arch suffix).
 
 dtbloader will look for the dtb files in the partition it was installed on. It will look into:
 `/dtbloader/dtbs/`; `dtbs/`; `/` in order of priority.
