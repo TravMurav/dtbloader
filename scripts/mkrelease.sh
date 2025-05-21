@@ -12,7 +12,7 @@ sign_everything() {
 
 TAG=$(git describe)
 
-echo "Generating \'$TAG\'"
+echo "Generating '$TAG'"
 
 BUILD_DIR="$PWD/build-$TAG"
 BLOB_DIR="$PWD/release/$TAG"
@@ -25,6 +25,7 @@ cp $BUILD_DIR/*.efi "$BLOB_DIR"
 git ls-files --recurse-submodules \
 	| tar 	--sort=name --mtime="@0" \
 		--owner=0 --group=0 --numeric-owner \
+		--transform "s,^,dtbloader-$TAG/," \
 		-caf "$BLOB_DIR/dtbloader-$TAG.tar.gz" -T-
 
 sign_everything "$BLOB_DIR"
