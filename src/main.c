@@ -75,7 +75,7 @@ static EFI_STATUS load_dtb(EFI_HANDLE ImageHandle, struct device *dev, UINT8 **d
 	EFI_FILE_HANDLE dtb_file = open_dtb(volume, dev->dtb);
 	if (!dtb_file) {
 		Print(L"Cant open the file\n");
-		return EFI_INVALID_PARAMETER;
+		return EFI_NOT_FOUND;
 	}
 
 	EFI_PHYSICAL_ADDRESS dtb_phys;
@@ -191,7 +191,44 @@ static EFI_STATUS check_dtb_hash(void *dtb)
 	return EFI_SUCCESS;
 }
 
-EFI_STATUS efi_dt_fixup(EFI_DT_FIXUP_PROTOCOL *this, void *dtb, UINTN *size, UINT32 flags)
+static EFI_STATUS install_dtb_config_table(EFI_HANDLE ImageHandle, struct device *dev)
+{
+	EFI_GUID EfiDtbTableGuid = EFI_DTB_TABLE_GUID;
+	EFI_STATUS status;
+	UINT8 *dtb = NULL;
+
+	status = load_dtb(ImageHandle, dev, &dtb);
+	if (EFI_ERROR(status))
+		return status;
+
+	/*
+	 * NOTE: load_dtb resizes the dtb to the buffer size so maybe
+	 * it's not the best place to check the hash...
+	 */
+	status = check_dtb_hash(dtb);
+	if (EFI_ERROR(status))
+		return status;
+
+	status = apply_dt_fixups(dev, dtb);
+	if (EFI_ERROR(status)) {
+		Print(L"Failed to fixup dtb: %r\n", status);
+		return status;
+	}
+
+	status = finalize_dtb(dtb);
+	if (EFI_ERROR(status))
+		return status;
+
+	status = uefi_call_wrapper(BS->InstallConfigurationTable, 2, &EfiDtbTableGuid, dtb);
+	if (EFI_ERROR(status)) {
+		Print(L"Failed to install dtb config table: %r\n", status);
+		return status;
+	}
+
+	return EFI_SUCCESS;
+}
+
+static EFI_STATUS efi_dt_fixup(EFI_DT_FIXUP_PROTOCOL *this, void *dtb, UINTN *size, UINT32 flags)
 {
 	struct device *dev = match_device();
 	UINTN extra_space = 4096 * 4;
@@ -229,20 +266,36 @@ EFI_STATUS efi_dt_fixup(EFI_DT_FIXUP_PROTOCOL *this, void *dtb, UINTN *size, UIN
 	return finalize_dtb(dtb);
 }
 
-EFI_DT_FIXUP_PROTOCOL fixup_prot = {
+static EFI_DT_FIXUP_PROTOCOL fixup_prot = {
 	.Revision = EFI_DT_FIXUP_PROTOCOL_REVISION,
 	.Fixup = efi_dt_fixup,
 };
 
+static EFI_STATUS install_dt_fixup_protocol(void)
+{
+	EFI_STATUS status;
+	EFI_GUID efi_dt_fixup_prot_guid = EFI_DT_FIXUP_PROTOCOL_GUID;
+	EFI_HANDLE fixup_handle = NULL;
+
+	status = uefi_call_wrapper(BS->InstallProtocolInterface, 4, &fixup_handle, &efi_dt_fixup_prot_guid,
+			EFI_NATIVE_INTERFACE, &fixup_prot);
+	if (EFI_ERROR(status)) {
+		Print(L"Failed to install fixup protocol: %r\n", status);
+		return status;
+	}
+
+	return EFI_SUCCESS;
+}
+
 EFI_STATUS efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable)
 {
 	EFI_STATUS status;
+	struct device *dev;
 
 	InitializeLib(ImageHandle, SystemTable);
 	Dbg(L"dtbloader!\n");
 
-	struct device *dev = match_device();
-
+	dev = match_device();
 	if (!dev) {
 		Print(L"Failed to detect this device!\n");
 		/*
@@ -263,45 +316,19 @@ EFI_STATUS efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable)
 
 	Print(L"Detected device: %s\n", dev->name);
 
-	UINT8 *dtb = NULL;
-
-	status = load_dtb(ImageHandle, dev, &dtb);
-	if (EFI_ERROR(status))
-		return status;
-
 	/*
-	 * NOTE: load_dtb resizes the dtb to the buffer size so maybe
-	 * it's not the best place to check the hash...
+	 * It's normal for us to ignore missing dtb file, since only
+	 * providing the fixup protocol is a valid usecase.
 	 */
-	status = check_dtb_hash(dtb);
-	if (EFI_ERROR(status))
-		return status;
-
-	status = apply_dt_fixups(dev, dtb);
-	if (EFI_ERROR(status)) {
-		Print(L"Failed to fixup dtb: %r\n", status);
+	status = install_dtb_config_table(ImageHandle, dev);
+	if (EFI_ERROR(status) && status != EFI_NOT_FOUND) {
+		Dbg(L"Failed to install dtb: %r\n", status);
 		return status;
 	}
 
-	status = finalize_dtb(dtb);
-	if (EFI_ERROR(status))
-		return status;
-
-	EFI_GUID efi_dt_fixup_prot_guid = EFI_DT_FIXUP_PROTOCOL_GUID;
-	EFI_HANDLE fixup_handle = NULL;
-
-	status = uefi_call_wrapper(BS->InstallProtocolInterface, 4, &fixup_handle, &efi_dt_fixup_prot_guid,
-			EFI_NATIVE_INTERFACE, &fixup_prot);
+	status = install_dt_fixup_protocol();
 	if (EFI_ERROR(status)) {
-		Print(L"Failed to install fixup protocol: %r\n", status);
-		return status;
-	}
-
-	EFI_GUID EfiDtbTableGuid = EFI_DTB_TABLE_GUID;
-
-	status = uefi_call_wrapper(BS->InstallConfigurationTable, 2, &EfiDtbTableGuid, dtb);
-	if (EFI_ERROR(status)) {
-		Print(L"Failed to install dtb: %r\n", status);
+		Print(L"Failed to install dt fixup protocol: %r\n", status);
 		return status;
 	}
 
