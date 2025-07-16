@@ -13,10 +13,16 @@ LIBFDT  := $(O)/external/libfdt.a
 GNUEFI_DIR = $(CURDIR)/external/gnu-efi
 LIBEFI  := $(O)/external/libefi.a
 
+LIBSHA1_DIR = $(CURDIR)/external/sha1
+LIBSHA1 := $(O)/external/libsha1.a
+
 
 CFLAGS		:= -target $(ARCH)-windows \
 		   -ffreestanding -fno-stack-protector -fshort-wchar -mno-red-zone \
-		   -I$(GNUEFI_DIR)/inc -I$(LIBFDT_DIR) -I$(CURDIR)/src/include \
+		   -I$(GNUEFI_DIR)/inc \
+		   -I$(LIBFDT_DIR) \
+		   -I$(LIBSHA1_DIR) \
+		   -I$(CURDIR)/src/include \
 		   -g -gcodeview -O2
 
 CFLAGS_SRC	:= -Wall
@@ -48,7 +54,7 @@ OBJS := \
 
 all: $(O)/dtbloader.efi
 
-$(O)/dtbloader.efi: $(OBJS) $(LIBEFI) $(LIBFDT)
+$(O)/dtbloader.efi: $(OBJS) $(LIBEFI) $(LIBFDT) $(LIBSHA1)
 	@echo [LD] $(notdir $@)
 	@mkdir -p $(dir $@)
 	@$(LD) $(LDFLAGS) -subsystem:efi_boot_service_driver $^ -out:$@
@@ -92,3 +98,13 @@ LIBFDT_OBJS := $(LIBFDT_SRCS:%.c=$(O)/external/dtc/libfdt/%.o)
 $(LIBFDT): $(LIBFDT_OBJS)
 	@echo [AR] $(notdir $@)
 	@$(AR) rc $@ $(LIBFDT_OBJS)
+
+#
+# sha1 related rules
+#
+
+LIBSHA1_OBJS := $(O)/external/sha1/sha1.o
+
+$(LIBSHA1): $(LIBSHA1_OBJS)
+	@echo [AR] $(notdir $@)
+	@$(AR) rc $@ $(LIBSHA1_OBJS)

@@ -22,7 +22,6 @@ void FreePages(EFI_PHYSICAL_ADDRESS addr, UINT64 page_count);
 
 CHAR16 *StrrChr(CHAR16 *str, CHAR16 ch);
 
-EFI_STATUS Hash2Sha1(UINT8 *msg, UINTN size, EFI_SHA1_HASH *hash);
 bool SecureBootEnabled(void);
 
 #define ARRAY_SIZE(x) (sizeof(x)/sizeof((x)[0]))

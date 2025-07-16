@@ -5,8 +5,6 @@
 #include <efilib.h>
 #include <libfdt.h>
 
-#include <protocol/Hash2.h>
-
 #include <util.h>
 #include <device.h>
 #include <chid.h>

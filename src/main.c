@@ -5,6 +5,7 @@
 #include <efi.h>
 #include <efilib.h>
 #include <libfdt.h>
+#include <sha1.h>
 
 #include <util.h>
 #include <device.h>
@@ -169,9 +170,8 @@ static EFI_STATUS check_dtb_hash(void *dtb)
 
 	old_hash = LibGetVariable(L"DtbloaderDtbHash", &gEfiGlobalVariableGuid);
 
-	status = Hash2Sha1(dtb, dtb_size, &new_hash);
-	if (EFI_ERROR(status))
-		return status;
+	_Static_assert(sizeof(new_hash) == 20, "");
+	SHA1((void*)&new_hash, (void*)dtb, dtb_size);
 
 	if (old_hash) {
 		hashes_match = !CompareMem(old_hash, &new_hash, sizeof(*old_hash));

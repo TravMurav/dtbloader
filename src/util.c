@@ -4,8 +4,7 @@
 #include <stdbool.h>
 #include <efi.h>
 #include <efilib.h>
-
-#include <protocol/Hash2.h>
+#include <sha1.h>
 
 #include <util.h>
 
@@ -97,23 +96,6 @@ CHAR16 *StrrChr(CHAR16 *str, CHAR16 ch)
 	}
 
 	return last;
-}
-
-EFI_STATUS Hash2Sha1(UINT8 *msg, UINTN size, EFI_SHA1_HASH *hash)
-{
-	EFI_GUID alg = EFI_HASH_ALGORITHM_SHA1_GUID;
-	EFI_GUID EfiHash2ProtocolGuid = EFI_HASH2_PROTOCOL_GUID;
-	EFI_HASH2_PROTOCOL *prot;
-	EFI_STATUS status;
-
-	if (!size || !msg || !hash)
-		return EFI_INVALID_PARAMETER;
-
-	status = LibLocateProtocol(&EfiHash2ProtocolGuid, (void**)&prot);
-	if (EFI_ERROR(status))
-		return status;
-
-	return uefi_call_wrapper(prot->Hash, 2, prot, &alg, msg, size, (EFI_HASH2_OUTPUT *)hash);
 }
 
 bool SecureBootEnabled(void)

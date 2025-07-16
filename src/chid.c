@@ -12,12 +12,11 @@
 #include <stdarg.h>
 #include <efi.h>
 #include <efilib.h>
+#include <sha1.h>
 
 #include <util.h>
 #include <device.h>
 #include <chid.h>
-
-#include <protocol/Hash2.h>
 
 /**
  * hash_strings() - Hash a list of strings after concatenating them.
@@ -28,55 +27,34 @@
  * @count:    Amount of strings.
  * @...:  One or more CHAR16 strings to use as message.
  */
-static EFI_STATUS hash_strings_sha1(EFI_SHA1_HASH2 *hash, UINT8 *seed, int seed_len, int count, ...)
+static EFI_STATUS hash_strings_sha1(EFI_SHA1_HASH *hash, UINT8 *seed, int seed_len, int count, ...)
 {
-	EFI_GUID alg = EFI_HASH_ALGORITHM_SHA1_GUID;
-	EFI_GUID EfiHash2ProtocolGuid = EFI_HASH2_PROTOCOL_GUID;
-	EFI_STATUS status;
-	EFI_HASH2_PROTOCOL *prot;
+	SHA1_CTX sha1;
 	va_list args;
-	size_t len;
-	UINT8 *str;
 	int i;
 
-	status = LibLocateProtocol(&EfiHash2ProtocolGuid, (void**)&prot);
-	if (EFI_ERROR(status))
-		return status;
+	SHA1Init(&sha1);
 
-	status = uefi_call_wrapper(prot->HashInit, 2, prot, &alg);
-	if (EFI_ERROR(status))
-		goto exit;
-
-	if (seed) {
-		str = (UINT8*)seed;
-		status = uefi_call_wrapper(prot->HashUpdate, 3, prot, str, seed_len);
-		if (EFI_ERROR(status))
-			goto exit;
-	}
+	if (seed)
+		SHA1Update(&sha1, (void*)seed, seed_len);
 
 	va_start(args, count);
 
 	for (i = 0; i < count; ++i) {
-		str = va_arg(args, UINT8*);
-		len = StrLen((CHAR16*)str) * sizeof(CHAR16);
+		UINT8 *str = va_arg(args, UINT8*);
+		size_t len = StrLen((CHAR16*)str) * sizeof(CHAR16);
 
 		if (len == 0)
 			continue;
 
-		status = uefi_call_wrapper(prot->HashUpdate, 3, prot, str, len);
-		if (EFI_ERROR(status))
-			goto exit;
+		SHA1Update(&sha1, (void*)str, len);
 	}
 
-	status = uefi_call_wrapper(prot->HashFinal, 2, prot, (EFI_HASH2_OUTPUT*)hash);
-	if (EFI_ERROR(status))
-		goto exit;
+	_Static_assert(sizeof(*hash) == 20, "");
+	SHA1Final((void*)hash, &sha1);
 
-	status = EFI_SUCCESS;
-
-exit:
 	va_end(args);
-	return status;
+	return EFI_SUCCESS;
 }
 
 #define SMBIOS_TYPE_SYSTEM_INFORMATION                   1
@@ -240,7 +218,7 @@ static EFI_STATUS get_chid(struct smbios_info *info, int id, EFI_GUID *chid)
 {
 	EFI_STATUS status;
 	EFI_GUID namespace = { 0x12d8ff70, 0x7f4c, 0x7d4c, { 0 } }; /* Swapped to BE */
-	EFI_SHA1_HASH2 hash = {0};
+	EFI_SHA1_HASH hash = {0};
 
 	switch (id) {
 	case 3:
