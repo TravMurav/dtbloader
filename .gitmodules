@@ -4,3 +4,6 @@
 [submodule "external/dtc"]
 	path = external/dtc
 	url = https://git.kernel.org/pub/scm/utils/dtc/dtc.git
+[submodule "external/sha1"]
+	path = external/sha1
+	url = https://github.com/clibs/sha1.git
