@@ -42,11 +42,8 @@ struct device {
 
 struct device *match_device(void);
 
-EFI_STATUS get_board_stable_hash(EFI_SHA1_HASH *hash, CHAR8 *key);
-
 #define MAC_ADDR_SIZE		6
 
-EFI_STATUS dt_set_default_mac(struct device *dev, void *dtb);
 EFI_STATUS dt_update_mac(void *dtb, const char * const compatibles[], unsigned num,
 			 const char *prop, UINT8 mac[MAC_ADDR_SIZE]);
 
