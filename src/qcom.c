@@ -271,11 +271,13 @@ EFI_STATUS qcom_dt_set_dpp_mac(struct device *dev, void *dtb)
 		"qcom,wcnss-wlan",
 		"qcom,wcn3990-wifi",
 		"pci17cb,1103",
+		"pci17cb,1107",
 	};
 	const char * const bd_compatibles[] = {
 		"qcom,wcnss-bt",
 		"qcom,wcn3991-bt",
 		"qcom,wcn6855-bt",
+		"qcom,wcn7850-bt",
 	};
 
 	status = locate_dpp(&dpp_partition);
