@@ -198,7 +198,7 @@ static EFI_STATUS qcom_dpp_read_file(EFI_HANDLE dpp_partition, CHAR16 *file_name
 		if (!blob.present)
 			break;
 
-		if (!StrCmp(file_name, blob.name)) {
+		if (!StriCmp(file_name, blob.name)) {
 			len = blob.data_len;
 			buf = AllocatePool(len);
 
