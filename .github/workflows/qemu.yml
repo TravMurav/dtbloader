@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install additional build dependencies
-        run: sudo apt-get install -yqq llvm lld device-tree-compiler qemu-system-arm qemu-efi-aarch64
+        run: sudo apt-get update && sudo apt-get install -yqq llvm lld device-tree-compiler qemu-system-arm qemu-efi-aarch64
       - uses: actions/checkout@v4
         with:
           submodules: recursive
