@@ -291,6 +291,25 @@ static EFI_STATUS install_dt_fixup_protocol(void)
 	return EFI_SUCCESS;
 }
 
+static EFI_STATUS set_dtb_name_variable(struct device *dev)
+{
+	EFI_GUID efi_dtbloader_guid = EFI_DTBLOADER_GUID;
+	EFI_STATUS status;
+	UINTN name_len;
+
+	if (LibGetVariable(L"DtbName", &efi_dtbloader_guid)) {
+		Dbg(L"Not resetting the DtbName variable!\n");
+		return EFI_SUCCESS;
+	}
+
+	name_len = (StrLen(dev->dtb) + 1) * sizeof(dev->dtb[0]);
+	status = LibSetVariable(L"DtbName", &efi_dtbloader_guid, name_len, dev->dtb);
+	if (EFI_ERROR(status))
+		return status;
+
+	return EFI_SUCCESS;
+}
+
 EFI_STATUS efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable)
 {
 	EFI_STATUS status;
@@ -319,6 +338,11 @@ EFI_STATUS efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable)
 	}
 
 	Print(L"Detected device: %s\n", dev->name);
+
+	status = set_dtb_name_variable(dev);
+	if (EFI_ERROR(status)) {
+		Print(L"Failed to set DtbName variable: %r\n", status);
+	}
 
 	/*
 	 * It's normal for us to ignore missing dtb file, since only
