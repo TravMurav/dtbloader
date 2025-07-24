@@ -18,4 +18,4 @@ jobs:
       - name: Run QEMU
         run: ./scripts/run_qemu.sh | tee log.txt
       - name: Check the log
-        run: "grep -q 'Detected device: LENOVO Miix 630' log.txt && ! grep -q 'Synchronous Exception' log.txt"
+        run: "grep -q 'Detected device: LENOVO Miix 630' log.txt && grep -q '_SCRIPT_DONE_' log.txt"

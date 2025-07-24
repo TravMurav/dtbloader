@@ -9,6 +9,8 @@ fs0:
 echo =====================================
 load dtbloader.efi
 echo =====================================
+dmpstore -guid 96176C01-5F3F-47C9-9F85-5632F602F611 DtbName
+echo _SCRIPT_DONE_
 reset -s
 EOF
 
