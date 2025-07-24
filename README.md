@@ -100,6 +100,30 @@ dtbloader will look for the dtb files in the partition it was installed on. It w
 > If SecureBoot is enabled, dtbloader will save the DTB hash into an uefi varialbe and show a warning
 > in case the hash changes. Hash will be updated automatically after.
 
+### EFI Variables
+
+dtbloader saves some EFI variables that can be used by bootloaders or other tools. All variables are created
+under the namespace defined by dtbloader's GUID: `{96176C01-5F3F-47C9-9F85-5632F602F611}`.
+
+#### `DtbName` - Name of the DTB that shall be loaded.
+
+This variable stores the canonical filename of the dtb, such as `qcom\sc8280xp-lenovo-thinkpad-x13s.dtb`.
+The variable is encoded using two-byte UCS2 characters and MAY contain a terminating NULL character.
+Dtbloader does not set Non-Volatile flag to this variable and will not override it if it was already set.
+
+The suggested use for this variable is implementing "devicetree directory" features in a bootloader. Bootloader
+may use this variable in combination with a dtb directory path to load correct dtb for a given boot option.
+
+> [!TIP]
+> If you wish to use a bootloader or tool that uses this variable but wish not to use dtbloader (or override
+> it's decision), you can set it manually. For example, using EFI Shell:
+>
+> ```
+> Shell:\> setvar -guid 96176C01-5F3F-47C9-9F85-5632F602F611 -bs -rt -nv =L"qcom\sc8280xp-lenovo-thinkpad-x13s.dtb"
+> ```
+>
+> Note that the `-nv` flag will save the variable into non-volatile storage.
+
 ## Acknowledgements
 
 This project is a reimplementation of the original [DtbLoader.efi](https://github.com/aarch64-laptops/edk2/tree/dtbloader-app)
