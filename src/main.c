@@ -12,6 +12,9 @@
 
 #include <protocol/dt_fixup.h>
 
+/* {96176c01-5f3f-47c9-9f85-5632f602f611} */
+#define EFI_DTBLOADER_GUID { 0x96176c01, 0x5f3f, 0x47c9, { 0x9f, 0x85, 0x56, 0x32, 0xf6, 0x02, 0xf6, 0x11 } }
+
 static const CHAR16 *dtb_locations[] = {
 	L"\\dtbloader\\dtbs\\",
 	L"\\dtbs\\",
@@ -160,6 +163,7 @@ static EFI_STATUS apply_dt_fixups(struct device *dev, void *dtb)
  */
 static EFI_STATUS check_dtb_hash(void *dtb)
 {
+	EFI_GUID efi_dtbloader_guid = EFI_DTBLOADER_GUID;
 	EFI_STATUS status;
 	UINTN dtb_size = fdt_totalsize(dtb);
 	EFI_SHA1_HASH *old_hash, new_hash;
@@ -168,7 +172,7 @@ static EFI_STATUS check_dtb_hash(void *dtb)
 	if (!SecureBootEnabled())
 		return EFI_SUCCESS;
 
-	old_hash = LibGetVariable(L"DtbloaderDtbHash", &gEfiGlobalVariableGuid);
+	old_hash = LibGetVariable(L"DtbHash", &efi_dtbloader_guid);
 
 	_Static_assert(sizeof(new_hash) == 20, "");
 	SHA1((void*)&new_hash, (void*)dtb, dtb_size);
@@ -184,7 +188,7 @@ static EFI_STATUS check_dtb_hash(void *dtb)
 	Print(L"%es\n", L"(dtbloader) DTB has changed! Press any key to confirm...");
 	Pause();
 
-	status = LibSetNVVariable(L"DtbloaderDtbHash", &gEfiGlobalVariableGuid, sizeof(new_hash), &new_hash);
+	status = LibSetNVVariable(L"DtbHash", &efi_dtbloader_guid, sizeof(new_hash), &new_hash);
 	if (EFI_ERROR(status))
 		return status;
 
