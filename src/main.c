@@ -228,6 +228,54 @@ static EFI_STATUS install_dtb_config_table(EFI_HANDLE ImageHandle, struct device
 	return EFI_SUCCESS;
 }
 
+static EFI_STATUS install_stub_dtb_config_table(struct device *dev)
+{
+	EFI_PHYSICAL_ADDRESS dtb_phys;
+	UINT64 dtb_sz = 8 * 1024;
+	UINT64 dtb_pages = dtb_sz / 4096;
+	EFI_STATUS status;
+	void *old_table = NULL;
+	int ret;
+
+	if (!dev->compatible)
+		return EFI_SUCCESS;
+
+	status = LibGetSystemConfigurationTable(&EfiDtbTableGuid, &old_table);
+	if (EFI_ERROR(status) || old_table == NULL)
+		return EFI_SUCCESS;
+
+	Dbg(L"Installing DTB stub: %s\n", dev->compatible);
+
+	/* The spec mandates using "ACPI" memory type for any configuration tables like dtb */
+	status = uefi_call_wrapper(BS->AllocatePages, 4, AllocateAnyPages, EfiACPIReclaimMemory, dtb_pages, &dtb_phys);
+	if (EFI_ERROR(status)) {
+		Print(L"Failed to allocate memory: %r\n", status);
+		return status;
+	}
+
+	UINT8 *dtb = (UINT8 *)(dtb_phys);
+
+	ret = fdt_create(dtb, dtb_sz);
+	if (ret)
+		return EFI_INVALID_PARAMETER;
+
+	ret = fdt_property_string(dtb, "compatible", dev->compatible);
+	if (ret)
+		return EFI_INVALID_PARAMETER;
+
+	ret = fdt_finish(dtb);
+	if (ret)
+		return EFI_INVALID_PARAMETER;
+
+	status = uefi_call_wrapper(BS->InstallConfigurationTable, 2, &EfiDtbTableGuid, dtb);
+	if (EFI_ERROR(status)) {
+		Print(L"Failed to install dtb config table: %r\n", status);
+		return status;
+	}
+
+	return EFI_SUCCESS;
+}
+
 static EFI_STATUS efi_dt_fixup(EFI_DT_FIXUP_PROTOCOL *this, void *dtb, UINTN *size, UINT32 flags)
 {
 	struct device *dev = match_device();
@@ -324,6 +372,14 @@ EFI_STATUS efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable)
 	if (EFI_ERROR(status) && status != EFI_NOT_FOUND) {
 		Dbg(L"Failed to install dtb: %r\n", status);
 		return status;
+	}
+
+	if (status == EFI_NOT_FOUND) {
+		status = install_stub_dtb_config_table(dev);
+		if (EFI_ERROR(status)) {
+			Print(L"Failed to install dtb stub: %r\n", status);
+			return status;
+		}
 	}
 
 	status = install_dt_fixup_protocol();
