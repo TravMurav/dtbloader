@@ -8,6 +8,7 @@
  * struct device - Device description
  * @name:         Pretty marketing name of this device.
  * @dtb:          Name of the DTB file.
+ * @compatible:   The primary compatible for the board dtb.
  * @hwids:        zero-terminated array of hwid values.
  * @extra_match:  Additional check to match the device.
  * @dt_fixup:     Board specific DTB fixups callback.
@@ -15,6 +16,7 @@
 struct device {
 	CHAR16 *name;
 	CHAR16 *dtb;
+	char *compatible;
 	EFI_GUID *hwids;
 
 	EFI_STATUS (*extra_match)(struct device *dev);
