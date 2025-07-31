@@ -25,6 +25,7 @@ static EFI_GUID lenovo_yoga_c630_13q50_hwids[] = {
 static struct device lenovo_yoga_c630_13q50_dev = {
 	.name  = L"LENOVO YOGA C630-13Q50",
 	.dtb   = L"qcom\\sdm850-lenovo-yoga-c630.dtb",
+	.compatible = "lenovo,yoga-c630",
 	.hwids = lenovo_yoga_c630_13q50_hwids,
 };
 DEVICE_DESC(lenovo_yoga_c630_13q50_dev);

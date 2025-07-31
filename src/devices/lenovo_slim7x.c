@@ -25,6 +25,7 @@ static EFI_GUID lenovo_yoga_slim_7_14q8x9_hwids[] = {
 static struct device lenovo_yoga_slim_7_14q8x9_dev = {
 	.name  = L"LENOVO Yoga Slim 7 14Q8X9",
 	.dtb   = L"qcom\\x1e80100-lenovo-yoga-slim7x.dtb",
+	.compatible = "lenovo,yoga-slim7x",
 	.hwids = lenovo_yoga_slim_7_14q8x9_hwids,
 };
 DEVICE_DESC(lenovo_yoga_slim_7_14q8x9_dev);

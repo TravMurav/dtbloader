@@ -25,6 +25,7 @@ static EFI_GUID microsoft_corporation_windows_dev_kit_2023_hwids[] = {
 static struct device microsoft_corporation_windows_dev_kit_2023_dev = {
 	.name  = L"Microsoft Corporation Windows Dev Kit 2023",
 	.dtb   = L"qcom\\sc8280xp-microsoft-blackrock.dtb",
+	.compatible = "microsoft,blackrock",
 	.hwids = microsoft_corporation_windows_dev_kit_2023_hwids,
 };
 DEVICE_DESC(microsoft_corporation_windows_dev_kit_2023_dev);
