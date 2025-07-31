@@ -28,6 +28,7 @@ static EFI_GUID asustek_computer_inc__asus_zenbook_a14_hwids[] = {
 static struct device asustek_computer_inc__asus_zenbook_a14_dev = {
         .name  = L"ASUSTeK COMPUTER INC. ASUS Zenbook A14",
         .dtb   = L"qcom\\x1p42100-asus-zenbook-a14.dtb",
+	.compatible = "asus,zenbook-a14-ux3407qa",
         .hwids = asustek_computer_inc__asus_zenbook_a14_hwids,
 };
 DEVICE_DESC(asustek_computer_inc__asus_zenbook_a14_dev);

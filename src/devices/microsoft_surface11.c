@@ -28,6 +28,7 @@ static EFI_GUID microsoft_corporation_microsoft_surface_pro__11th_edition_hwids[
 static struct device microsoft_corporation_microsoft_surface_pro__11th_edition_dev = {
 	.name  = L"Microsoft Corporation Microsoft Surface Pro, 11th Edition",
 	.dtb   = L"qcom\\x1e80100-microsoft-denali.dtb", /* Tentative. */
+	.compatible = "microsoft,denali",
 	.hwids = microsoft_corporation_microsoft_surface_pro__11th_edition_hwids,
 
 	.dt_fixup = qcom_dt_set_dpp_mac,

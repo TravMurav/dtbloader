@@ -25,6 +25,7 @@ static EFI_GUID asustek_computer_inc__asus_vivobook_s_15_hwids[] = {
 static struct device asustek_computer_inc__asus_vivobook_s_15_dev = {
 	.name  = L"ASUSTeK COMPUTER INC. ASUS Vivobook S 15",
 	.dtb   = L"qcom\\x1e80100-asus-vivobook-s15.dtb",
+	.compatible = "asus,vivobook-s15",
 	.hwids = asustek_computer_inc__asus_vivobook_s_15_hwids,
 };
 DEVICE_DESC(asustek_computer_inc__asus_vivobook_s_15_dev);
