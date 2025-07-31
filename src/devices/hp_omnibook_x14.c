@@ -25,6 +25,7 @@ static EFI_GUID hp_103c_5335m8_hp_omnibook_x_hwids[] = {
 static struct device hp_103c_5335m8_hp_omnibook_x_dev = {
 	.name  = L"HP 103C_5335M8 HP OmniBook X",
 	.dtb   = L"qcom\\x1e80100-hp-omnibook-x14.dtb",
+	.compatible = "hp,omnibook-x14",
 	.hwids = hp_103c_5335m8_hp_omnibook_x_hwids,
 };
 DEVICE_DESC(hp_103c_5335m8_hp_omnibook_x_dev);

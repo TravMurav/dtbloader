@@ -26,6 +26,7 @@ static EFI_GUID acer_aspire_1_hwids[] = {
 static struct device acer_aspire_1_dev = {
 	.name  = L"Acer Aspire 1",
 	.dtb   = L"qcom\\sc7180-acer-aspire1.dtb",
+	.compatible = "acer,aspire1",
 	.hwids = acer_aspire_1_hwids,
 
 	.dt_fixup = qcom_dt_set_dpp_mac,

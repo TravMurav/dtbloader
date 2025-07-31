@@ -25,6 +25,7 @@ static EFI_GUID hp_hp_omnibook_x_laptop_14_fe1xxx_hwids[] = {
 static struct device hp_hp_omnibook_x_laptop_14_fe1xxx_dev = {
 	.name  = L"HP HP OmniBook X Laptop 14-fe1xxx",
 	.dtb   = L"qcom\\x1p42100-hp-omnibook-x14.dtb", /* Tentative. */
+	.compatible = "hp,omnibook-x14-fe1",
 	.hwids = hp_hp_omnibook_x_laptop_14_fe1xxx_hwids,
 };
 DEVICE_DESC(hp_hp_omnibook_x_laptop_14_fe1xxx_dev);

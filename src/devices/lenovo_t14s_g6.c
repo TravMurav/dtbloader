@@ -103,6 +103,7 @@ static EFI_GUID lenovo_thinkpad_t14s_gen_6_hwids[] = {
 static struct device lenovo_thinkpad_t14s_gen_6_oled_dev = {
 	.name  = L"LENOVO ThinkPad T14s Gen 6 (OLED)",
 	.dtb   = L"qcom\\x1e78100-lenovo-thinkpad-t14s-oled.dtb",
+	.compatible = "lenovo,thinkpad-t14s-oled",
 	.hwids = lenovo_thinkpad_t14s_gen_6_hwids,
 
 	.extra_match = t14s_is_oled,
@@ -112,6 +113,7 @@ DEVICE_DESC(lenovo_thinkpad_t14s_gen_6_oled_dev);
 static struct device lenovo_thinkpad_t14s_gen_6_dev = {
 	.name  = L"LENOVO ThinkPad T14s Gen 6 (IPS)",
 	.dtb   = L"qcom\\x1e78100-lenovo-thinkpad-t14s.dtb",
+	.compatible = "lenovo,thinkpad-t14s-lcd",
 	.hwids = lenovo_thinkpad_t14s_gen_6_hwids,
 };
 DEVICE_DESC_END(lenovo_thinkpad_t14s_gen_6_dev);

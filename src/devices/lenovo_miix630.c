@@ -25,6 +25,7 @@ static EFI_GUID lenovo_miix_630_hwids[] = {
 static struct device lenovo_miix_630_dev = {
 	.name  = L"LENOVO Miix 630",
 	.dtb   = L"qcom\\msm8998-lenovo-miix-630.dtb",
+	.compatible = "lenovo,miix-630",
 	.hwids = lenovo_miix_630_hwids,
 };
 DEVICE_DESC(lenovo_miix_630_dev);

@@ -31,6 +31,7 @@ static EFI_GUID lenovo_flex_5g_14q8cx05_hwids[] = {
 static struct device lenovo_flex_5g_14q8cx05_dev = {
 	.name  = L"LENOVO Flex 5G 14Q8CX05",
 	.dtb   = L"qcom\\sc8180x-lenovo-flex-5g.dtb",
+	.compatible = "lenovo,flex-5g",
 	.hwids = lenovo_flex_5g_14q8cx05_hwids,
 };
 DEVICE_DESC(lenovo_flex_5g_14q8cx05_dev);
@@ -57,6 +58,7 @@ static EFI_GUID lenovo_yoga_5g_14q8cx05_hwids[] = {
 static struct device lenovo_yoga_5g_14q8cx05_dev = {
 	.name  = L"LENOVO Yoga 5G 14Q8CX05",
 	.dtb   = L"qcom\\sc8180x-lenovo-flex-5g.dtb",
+	.compatible = "lenovo,flex-5g",
 	.hwids = lenovo_yoga_5g_14q8cx05_hwids,
 };
 DEVICE_DESC(lenovo_yoga_5g_14q8cx05_dev);

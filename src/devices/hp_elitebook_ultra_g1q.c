@@ -25,6 +25,7 @@ static EFI_GUID hp_103c_5336an_hp_elitebook_ultra_hwids[] = {
 static struct device hp_103c_5336an_hp_elitebook_ultra_dev = {
 	.name  = L"HP 103C_5336AN HP EliteBook Ultra",
 	.dtb   = L"qcom\\x1e80100-hp-elitebook-ultra-g1q.dtb",
+	.compatible = "hp,elitebook-ultra-g1q",
 	.hwids = hp_103c_5336an_hp_elitebook_ultra_hwids,
 };
 DEVICE_DESC(hp_103c_5336an_hp_elitebook_ultra_dev);

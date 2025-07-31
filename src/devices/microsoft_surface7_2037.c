@@ -28,6 +28,7 @@ static EFI_GUID microsoft_corporation_surface_laptop_7th_edition_2037_hwids[] = 
 static struct device microsoft_corporation_surface_laptop_7th_edition_2037_dev = {
 	.name  = L"Microsoft Corporation Surface_Laptop_7th_Edition_2037",
 	.dtb   = L"qcom\\x1e80100-microsoft-romulus15.dtb",
+	.compatible = "microsoft,romulus15",
 	.hwids = microsoft_corporation_surface_laptop_7th_edition_2037_hwids,
 };
 DEVICE_DESC(microsoft_corporation_surface_laptop_7th_edition_2037_dev);

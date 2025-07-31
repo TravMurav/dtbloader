@@ -19,6 +19,7 @@ static EFI_GUID qualcomm_snapdragon_devkit_hwids[] = {
 static struct device qualcomm_snapdragon_devkit_dev = {
 	.name  = L"Qualcomm Snapdragon-Devkit",
 	.dtb   = L"qcom\\x1e001de-devkit.dtb",
+	.compatible = "qcom,x1e001de-devkit",
 	.hwids = qualcomm_snapdragon_devkit_hwids,
 };
 DEVICE_DESC(qualcomm_snapdragon_devkit_dev);

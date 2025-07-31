@@ -28,6 +28,7 @@ static EFI_GUID lenovo_ideapad_5_2_in_1_14q8x9_hwids[] = {
 static struct device lenovo_ideapad_5_2_in_1_14q8x9_dev = {
 	.name  = L"LENOVO IdeaPad 5 2-in-1 14Q8X9",
 	.dtb   = L"qcom\\x1p42100-lenovo-ideapad-5-2in1.dtb", /* Tentative. */
+	.compatible = "lenovo,ideapad-5-2in1",
 	.hwids = lenovo_ideapad_5_2_in_1_14q8x9_hwids,
 };
 DEVICE_DESC(lenovo_ideapad_5_2_in_1_14q8x9_dev);

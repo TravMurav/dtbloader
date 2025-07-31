@@ -28,6 +28,7 @@ static EFI_GUID acer_swift_14_ai_hwids[] = {
 static struct device acer_swift_14_ai_dev = {
 	.name  = L"Acer Swift 14 AI",
 	.dtb   = L"qcom\\x1p64100-acer-swift-sf14-11.dtb", /* Tentative. */
+	.compatible = "acer,swift-sf14-11",
 	.hwids = acer_swift_14_ai_hwids,
 };
 DEVICE_DESC(acer_swift_14_ai_dev);

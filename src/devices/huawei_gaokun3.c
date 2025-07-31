@@ -28,6 +28,7 @@ static EFI_GUID huawei_matebook_e_hwids[] = {
 static struct device huawei_matebook_e_dev = {
 	.name  = L"HUAWEI MateBook E",
 	.dtb   = L"qcom\\sc8280xp-huawei-gaokun3.dtb",
+	.compatible = "huawei,gaokun3",
 	.hwids = huawei_matebook_e_hwids,
 };
 DEVICE_DESC(huawei_matebook_e_dev);

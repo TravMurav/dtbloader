@@ -28,6 +28,7 @@ static EFI_GUID dell_latitude_7455_hwids[] = {
 static struct device dell_latitude_7455_dev = {
 	.name  = L"Dell Inc. Latitude 7455",
 	.dtb   = L"qcom\\x1e80100-dell-latitude-7455.dtb",
+	.compatible = "dell,latitude-7455",
 	.hwids = dell_latitude_7455_hwids,
 };
 DEVICE_DESC(dell_latitude_7455_dev);
