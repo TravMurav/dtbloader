@@ -1,0 +1,37 @@
+Computer Information
+--------------------
+BiosVendor: LENOVO
+BiosVersion: Q1CN22WW
+BiosMajorRelease: 1
+BiosMinorRelease: 22
+FirmwareMajorRelease: 01
+FirmwareMinorRelease: 16
+Manufacturer: LENOVO
+Family: IdeaPad 5 2-in-1 14Q8X9
+ProductName: 83GH
+ProductSku: LENOVO_MT_83GH_BU_idea_FM_IdeaPad 5 2-in-1 14Q8X9
+EnclosureKind: 1f
+BaseboardManufacturer: LENOVO
+BaseboardProduct: LNVNB161216
+Hardware IDs
+------------
+{d51c6a3a-45a7-5a6f-9628-9074f72783d5}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{6e60bb5f-6c91-564d-9d57-ca3b2d9c280f}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{8b55e9a3-c4bf-5418-bd93-2af3e9263694}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{d622845f-0305-5b33-b081-b7519488ed65}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{9b723570-d493-5541-ae58-49087512f816}   <- Manufacturer + Family + ProductName + ProductSku
+{eb458c6d-45b2-5299-95b7-87723235240e}   <- Manufacturer + Family + ProductName
+{920bf110-b027-51fc-97e5-bb9b46e78c75}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{9276913a-a9da-5237-b4e8-c8502197264a}   <- Manufacturer + ProductSku
+{a8a28ecb-200f-59c6-8fe3-62fa670fb80d}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{24248bed-dbd2-5e4f-ba41-4e03a09b904a}   <- Manufacturer + ProductName
+{68320834-1316-5dad-babf-ae31cc3ff58c}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{d15b437b-55bf-5bd8-8a88-eb4b9e54cb97}   <- Manufacturer + Family
+{32b7e294-a252-5a72-b3c6-6197f08c64f1}   <- Manufacturer + EnclosureKind
+{71d86d4d-02f8-5566-a7a1-529cef184b7e}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{6de5d951-d755-576b-bd09-c5cf66b27234}   <- Manufacturer
+Extra Hardware IDs
+------------------
+{63fd3926-001c-5392-9c34-fdd477025bd8}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor
+{4ff87ce0-b6ce-5e37-899b-389129fc099e}   <- Manufacturer + Family + ProductName + BiosVendor
+{99431f53-09a1-5869-be79-65e2fa3f341d}   <- Manufacturer + BiosVendor
