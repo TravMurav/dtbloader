@@ -3,14 +3,21 @@
 # Copyright (c) 2024 Nikita Travkin <nikita@trvn.ru>
 
 dtb_name="FIXME!"
+dtb_compatible="FIXME!"
 hwids_file=""
 name_field="Family"
+
+if [ -e /sys/firmware/devicetree/base/compatible ]
+then
+	dtb_compatible="$(cat /sys/firmware/devicetree/base/compatible | tr '\0' '\n' | head -n1)"
+fi
 
 usage() {
 	echo "Usage: $0 [-h] [-d DTB_NAME] [-f FILE] [-n NAME]"
 	echo "Generate hardware description struct for dtbloader."
 	echo
 	echo "  -d DTB	Set the name of the DTB to use."
+	echo "  -c COMP	Set the compatible value to use."
 	echo "  -f FILE	Read FILE as fwupdtool hwids output."
 	echo "  -n NAME	Field to use as device name. See below. (default: $name_field)"
 	echo "  -h		This help."
@@ -20,11 +27,14 @@ usage() {
 	echo
 }
 
-while getopts ":d:f:n:h" opt
+while getopts ":d:c:f:n:h" opt
 do
 	case $opt in
 		d)
 			dtb_name="$OPTARG"
+			;;
+		c)
+			dtb_compatible="$OPTARG"
 			;;
 		f)
 			hwids_file="$OPTARG"
@@ -81,6 +91,7 @@ echo
 echo "static struct device ""$var_prefix""_dev = {"
 echo "	.name  = L\"$(get_field "Manufacturer") $(get_field "$name_field")\","
 echo "	.dtb   = L\"$(echo "$dtb_name" | sed 's_[/\\]_\\\\_')\","
+echo "	.compatible = \"$dtb_compatible\","
 echo "	.hwids = ""$var_prefix""_hwids,"
 echo "};"
 echo "DEVICE_DESC(""$var_prefix""_dev);"
