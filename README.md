@@ -25,6 +25,7 @@ attemtps to simplify running Linux-based or other OS that use DT by providing:
 - <!-- x1e80100 --> HP Omnibook X 14
 - <!-- sc8280xp --> Huawei Matebook E Go
 - <!-- sc8180x  --> Lenovo Flex 5G
+- *<!-- x1p42100 --> Lenovo IdeaPad 5 2-in-1 14Q8X9*
 - <!-- msm8998 --> Lenovo Miix 630
 - <!-- x1e78100 --> Lenovo ThinkPad T14s Gen 6
 - <!-- sc8280xp --> Lenovo ThinkPad X13s Gen 1
