@@ -24,7 +24,7 @@ static EFI_GUID microsoft_corporation_surface_hwids[] = {
 
 static struct device microsoft_corporation_surface_dev = {
 	.name  = L"Microsoft Corporation Surface Pro 12in",
-	.dtb   = L"qcom\\x1p42100-microsoft-sp12.dtb",
+	.dtb   = L"qcom\\x1p42100-microsoft-sp12.dtb", /* Tentative. */
 	.hwids = microsoft_corporation_surface_hwids,
 };
 DEVICE_DESC(microsoft_corporation_surface_dev);
