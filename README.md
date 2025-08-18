@@ -33,6 +33,7 @@ attemtps to simplify running Linux-based or other OS that use DT by providing:
 - <!-- x1e80100 --> Lenovo Yoga Slim 7x
 - <!-- sc8280xp --> Microsoft Surface Pro 9 5G
 - *<!-- x1e80100 --> Microsoft Surface Pro 11*
+- *<!-- x1p42100 --> Microsoft Surface Pro 12in*
 - <!-- sc8280xp --> Microsoft Windows Dev Kit 2023
 - <!-- x1e001de --> QTI Snapdragon Devkit for Windows (x1e)
 
