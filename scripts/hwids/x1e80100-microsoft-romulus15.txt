@@ -1,0 +1,37 @@
+Computer Information
+--------------------
+BiosVendor: Microsoft Corporation
+BiosVersion: 175.126.235
+BiosMajorRelease: 255
+BiosMinorRelease: 255
+FirmwareMajorRelease: ff
+FirmwareMinorRelease: ff
+Manufacturer: Microsoft Corporation
+Family: Surface
+ProductName: Microsoft Surface Laptop, 7th Edition
+ProductSku: Surface_Laptop_7th_Edition_2037
+EnclosureKind: 9
+BaseboardManufacturer: Microsoft Corporation
+BaseboardProduct: Microsoft Surface Laptop, 7th Edition
+Hardware IDs
+------------
+{e56cd9fa-d992-5947-9f80-82345827e8e6}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{e1fbd53f-3738-5fa6-aa7b-5ae319663d6b}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{e4cef54f-d5b2-56b1-8aa0-07b48c3deedf}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{ebce3085-12c1-58f3-9456-ccdf741a1538}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{f91b1a95-926c-5fd7-9826-4a101e142f97}   <- Manufacturer + Family + ProductName + ProductSku
+{892e90c9-31e3-5131-a217-a02632dba5e9}   <- Manufacturer + Family + ProductName
+{27ec66e4-3f81-5c06-997e-e1ea0a98b8a1}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{90482ef5-831d-5069-8d40-92d339a75c77}   <- Manufacturer + ProductSku
+{3c329240-a447-5ec5-b79b-d1149420ac62}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{224ba2ff-14c1-5b33-ac10-079ccc217be2}   <- Manufacturer + ProductName
+{924900a0-9be2-53ca-90d7-b0e38827f5c5}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{ca2e5189-1d32-509f-88a0-d4ebcc721899}   <- Manufacturer + Family
+{aca387a9-183e-5da9-8f9d-f460c3f50f54}   <- Manufacturer + EnclosureKind
+{1c07beb2-8442-5086-baab-2c44a468e3a3}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{cc0aea32-ad2c-5013-8bed-cede6be8c9f4}   <- Manufacturer
+Extra Hardware IDs
+------------------
+{109cd8d8-6086-50b6-9c2d-d0aca0f418da}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor
+{c735618b-d526-5f71-9651-8d149340d620}   <- Manufacturer + Family + ProductName + BiosVendor
+{9914cecc-aab7-570e-8fce-e86009ea6bbb}   <- Manufacturer + BiosVendor
