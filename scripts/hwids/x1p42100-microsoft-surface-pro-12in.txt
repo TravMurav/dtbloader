@@ -1,0 +1,37 @@
+Computer Information
+--------------------
+BiosVendor: Microsoft Corporation
+BiosVersion: 8.722.235
+BiosMajorRelease: 255
+BiosMinorRelease: 255
+FirmwareMajorRelease: ff
+FirmwareMinorRelease: ff
+Manufacturer: Microsoft Corporation
+Family: Surface
+ProductName: Surface Pro 12in 1st Ed with Snapdragon
+ProductSku: Surface_Pro_12in_1st_Ed_with_Snapdragon_2110
+EnclosureKind: 9
+BaseboardManufacturer: Microsoft Corporation
+BaseboardProduct: Surface Pro 12in 1st Ed with Snapdragon
+Hardware IDs
+------------
+{38f75a5d-c3fc-5306-bb2e-bbb516e1ea91}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{57ba7c1d-8e88-59a9-82c9-044e765788e7}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{10cb324b-df3c-5081-bc7d-b5cc6795eeef}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{7c967d92-123c-5bfc-9fe8-430e6bba5ecb}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{277a48e4-924d-5ab0-81b9-d29c2ff47ad5}   <- Manufacturer + Family + ProductName + ProductSku
+{0a3f15dc-fcde-5159-baf8-1b55f5e1ae57}   <- Manufacturer + Family + ProductName
+{d17ea34a-39dc-5a14-8046-f47f082b4065}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{94996ddd-cdc3-5617-a625-3052726c4654}   <- Manufacturer + ProductSku
+{ef716fc4-b1b0-595c-b66e-1e3df6a0dc1d}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{b3930262-2a19-5f3f-adf0-b34629632fbb}   <- Manufacturer + ProductName
+{2cdac0d6-d408-54ab-bf1e-a124b6c5425b}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{ca2e5189-1d32-509f-88a0-d4ebcc721899}   <- Manufacturer + Family
+{aca387a9-183e-5da9-8f9d-f460c3f50f54}   <- Manufacturer + EnclosureKind
+{fb899afb-72ea-5a6b-ae82-995730f73d6f}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{cc0aea32-ad2c-5013-8bed-cede6be8c9f4}   <- Manufacturer
+Extra Hardware IDs
+------------------
+{abbf3314-7dde-5966-980c-a1be8cf163b8}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor
+{587dab3d-0f40-5962-b043-6fc86e41cba2}   <- Manufacturer + Family + ProductName + BiosVendor
+{9914cecc-aab7-570e-8fce-e86009ea6bbb}   <- Manufacturer + BiosVendor
