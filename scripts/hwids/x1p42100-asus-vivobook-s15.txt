@@ -2,18 +2,22 @@ Computer Information
 --------------------
 BiosVendor: Insyde
 BiosVersion: S5507QA.318
+BiosMajorRelease: 3
+BiosMinorRelease: 10
+FirmwareMajorRelease: 03
+FirmwareMinorRelease: 07
 Manufacturer: ASUSTeK COMPUTER INC.
 Family: ASUS Vivobook S 15
 ProductName: ASUS Vivobook S 15 S5507QA_S5507QA
 ProductSku: 
-EnclosureKind: 10
+EnclosureKind: a
 BaseboardManufacturer: ASUSTeK COMPUTER INC.
 BaseboardProduct: S5507QA
 Hardware IDs
 ------------
-not available as 'BiosMajorRelease' unknown
-not available as 'BiosMajorRelease' unknown
-not available as 'BiosMajorRelease' unknown
+{c4575028-e938-504d-850d-f36fbb6b300d}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{920bc3d2-69f0-5705-83d8-3e0019ab5223}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{ac5b6293-c2ac-5e82-98f2-0475efbc11fc}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
 {0c926a29-b883-5482-aea7-ddda46084840}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
 {c5fed9eb-6a7b-5378-b093-484d9322150b}   <- Manufacturer + Family + ProductName + ProductSku
 {c9cd4052-8d61-5a5b-ad16-b9f12a993822}   <- Manufacturer + Family + ProductName
@@ -23,7 +27,7 @@ not available as 'BiosMajorRelease' unknown
 {172515ff-feb1-5f61-bc14-116a23ea70da}   <- Manufacturer + ProductName
 {f6b44a44-c913-572c-8c9c-0ff0f9c010f0}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
 {51df1ece-cd39-547a-8f9f-8f036fcfe752}   <- Manufacturer + Family
-{1a77083d-737f-5bff-8dc4-028da31980b3}   <- Manufacturer + EnclosureKind
+{665276be-80c5-5e5d-929f-fa85d18e2d50}   <- Manufacturer + EnclosureKind
 {aeb1c925-81b7-5c73-ae9b-49bc5365de8f}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
 {65605ed1-09e2-57aa-bd0f-a26c1d35433f}   <- Manufacturer
 Extra Hardware IDs
