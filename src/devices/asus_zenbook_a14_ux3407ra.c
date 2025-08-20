@@ -3,7 +3,7 @@
 #include <efi.h>
 #include <device.h>
 
-static EFI_GUID asustek_computer_inc__asus_zenbook_a14_hwids[] = {
+static EFI_GUID asustek_computer_inc__asus_zenbook_a14_ux3407ra_hwids[] = {
 	{ 0xc41d2cda, 0xfda7, 0x522c, { 0xb1, 0xa7, 0x4a, 0x83, 0x5c, 0x15, 0xc4, 0x3d } },
 	{ 0x0bfddfaf, 0xe393, 0x5dfe, { 0xa8, 0x05, 0x39, 0xb8, 0xb1, 0x09, 0x8c, 0x81 } },
 	{ 0xf0bb1cd4, 0x995a, 0x5c90, { 0x94, 0x6b, 0x9b, 0xb9, 0x58, 0xf3, 0x5f, 0x42 } },
@@ -25,9 +25,9 @@ static EFI_GUID asustek_computer_inc__asus_zenbook_a14_hwids[] = {
 	{ }
 };
 
-static struct device asustek_computer_inc__asus_zenbook_a14_dev = {
+static struct device asustek_computer_inc__asus_zenbook_a14_ux3407ra_dev = {
 	.name  = L"ASUSTeK COMPUTER INC. ASUS Zenbook A14",
-	.dtb   = L"qcom\x1e80100-asus-zenbook-a14.dtb",
-	.hwids = asustek_computer_inc__asus_zenbook_a14_hwids,
+	.dtb   = L"qcom\\x1e80100-asus-zenbook-a14.dtb",
+	.hwids = asustek_computer_inc__asus_zenbook_a14_ux3407ra_hwids,
 };
-DEVICE_DESC(asustek_computer_inc__asus_zenbook_a14_dev);
+DEVICE_DESC(asustek_computer_inc__asus_zenbook_a14_ux3407ra_dev);
