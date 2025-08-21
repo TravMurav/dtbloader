@@ -18,6 +18,7 @@ attemtps to simplify running Linux-based or other OS that use DT by providing:
 -->
 
 - <!-- sc7180   --> Acer Aspire 1
+- *<!-- x1p64100 --> Acer Swift 14 AI*
 - <!-- x1e80100 --> ASUS Vivobook S 15
 - <!-- x1p42100 --> ASUS Zenbook A14 UX3407QA
 - <!-- x1e80100 --> ASUS Zenbook A14 UX3407RA
