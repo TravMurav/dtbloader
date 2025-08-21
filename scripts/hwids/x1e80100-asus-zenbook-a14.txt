@@ -1,0 +1,37 @@
+Computer Information
+--------------------
+BiosVendor: Insyde
+BiosVersion: UX3407RA.305
+BiosMajorRelease: 3
+BiosMinorRelease: 5
+FirmwareMajorRelease: 03
+FirmwareMinorRelease: 0b
+Manufacturer: ASUSTeK COMPUTER INC.
+Family: ASUS Zenbook A14
+ProductName: ASUS Zenbook A14 UX3407RA_UX3407RA
+ProductSku: 
+EnclosureKind: a
+BaseboardManufacturer: ASUSTeK COMPUTER INC.
+BaseboardProduct: UX3407RA
+Hardware IDs
+------------
+{c41d2cda-fda7-522c-b1a7-4a835c15c43d}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{0bfddfaf-e393-5dfe-a805-39b8b1098c81}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{f0bb1cd4-995a-5c90-946b-9bb958f35f42}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{2d610a5e-ef69-5e60-b15e-7786d0ebd79e}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{6f892377-a51e-5f99-a363-b79f28fc55f9}   <- Manufacturer + Family + ProductName + ProductSku
+{0c3f5e9c-eddb-5ba2-88ee-06ae0221a53d}   <- Manufacturer + Family + ProductName
+{20b8b77d-e450-550b-b1ff-55d3317f59a6}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{24652d54-00f4-59ae-96fb-f7adbfa4a939}   <- Manufacturer + ProductSku
+{5c9fc73f-f915-52bf-a82d-9c7fe2274ecc}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{3884ad58-4d63-589a-be98-b8ab1ddf3b93}   <- Manufacturer + ProductName
+{cedbcc19-3a5a-5bae-9973-f8e158188de7}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{c5647aaf-bd0a-5863-bdda-49afd00c5329}   <- Manufacturer + Family
+{665276be-80c5-5e5d-929f-fa85d18e2d50}   <- Manufacturer + EnclosureKind
+{1038788a-2a89-5898-8292-9db114671c04}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{65605ed1-09e2-57aa-bd0f-a26c1d35433f}   <- Manufacturer
+Extra Hardware IDs
+------------------
+{1f2f1045-a811-5e42-b31e-b433e384fc79}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor
+{b307ab54-c79d-58ca-a3b2-d1b1e325bfc3}   <- Manufacturer + Family + ProductName + BiosVendor
+{9d1b57fb-8282-5287-bd50-3c93d43921fa}   <- Manufacturer + BiosVendor

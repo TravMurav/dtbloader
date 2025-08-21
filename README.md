@@ -20,6 +20,7 @@ attemtps to simplify running Linux-based or other OS that use DT by providing:
 - <!-- sc7180   --> Acer Aspire 1
 - <!-- x1e80100 --> ASUS Vivobook S 15
 - <!-- x1p42100 --> ASUS Zenbook A14 UX3407QA
+- <!-- x1e80100 --> ASUS Zenbook A14 UX3407RA
 - *<!-- x1e80100 --> Dell Latitude 7455*
 - <!-- x1e80100 --> Dell XPS 13 9345
 - <!-- x1e80100 --> HP Omnibook X 14
