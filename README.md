@@ -30,6 +30,7 @@ attemtps to simplify running Linux-based or other OS that use DT by providing:
 - <!-- sc8180x  --> Lenovo Flex 5G
 - *<!-- x1p42100 --> Lenovo IdeaPad 5 2-in-1 14Q8X9*
 - <!-- msm8998 --> Lenovo Miix 630
+- *<!-- x1p42100 --> Lenovo Thinkbook 16 G7 QOY*
 - <!-- x1e78100 --> Lenovo ThinkPad T14s Gen 6
 - <!-- sc8280xp --> Lenovo ThinkPad X13s Gen 1
 - <!-- sc8180x  --> Lenovo Yoga 5G
