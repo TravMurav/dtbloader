@@ -1,0 +1,37 @@
+Computer Information
+--------------------
+BiosVendor: Dell Inc.
+BiosVersion: 2.11.0
+BiosMajorRelease: 2
+BiosMinorRelease: 11
+FirmwareMajorRelease: ff
+FirmwareMinorRelease: ff
+Manufacturer: Dell Inc.
+Family: Latitude
+ProductName: Latitude 5455
+ProductSku: C83
+EnclosureKind: a
+BaseboardManufacturer: Dell Inc.
+BaseboardProduct: KYDKV
+Hardware IDs
+------------
+{4d1ff2c8-dd8d-556b-befa-0cab2bc86be3}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{2d75e18e-e107-5c79-8a69-5f163d28ee6f}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{9195a554-2255-55ce-ab3f-59a2aba05c4e}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{6329967e-8fcd-5544-8869-36881d8b997b}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{f069ee1a-448c-55df-b8a2-eebce2ccaf7f}   <- Manufacturer + Family + ProductName + ProductSku
+{75d1456b-5a14-5868-b877-7b9f58f4dd0d}   <- Manufacturer + Family + ProductName
+{d33d10f9-d59d-5dc6-b13b-686ac24ea3c0}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{745f5023-2386-5aaa-944d-b825bea80756}   <- Manufacturer + ProductSku
+{9e9723ce-65b3-57d5-a98d-bf4e0b8f87ed}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{2f11e817-91c9-5aa2-acb1-bd1d317c9ba6}   <- Manufacturer + ProductName
+{53c465c5-6425-51cd-b0aa-3382f3ad3622}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{41b0b5d7-ad12-5d86-9a3d-826f9b20adcc}   <- Manufacturer + Family
+{5c163113-9296-5c8d-a92d-ae04eb59a0f7}   <- Manufacturer + EnclosureKind
+{b27a6651-6878-5436-ab57-2d4371533573}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{85d38fda-fc0e-5c6f-808f-076984ae7978}   <- Manufacturer
+Extra Hardware IDs
+------------------
+{dfb300e4-c621-562c-a147-521e95ce6b7f}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor
+{838cf30a-6594-5200-8432-b94de34ce905}   <- Manufacturer + Family + ProductName + BiosVendor
+{36cb5c6e-fb91-55e9-8077-e004f2b1ddad}   <- Manufacturer + BiosVendor
