@@ -26,6 +26,7 @@ attemtps to simplify running Linux-based or other OS that use DT by providing:
 - *<!-- x1p64100 --> Dell Latitude 5455*
 - *<!-- x1e80100 --> Dell Latitude 7455*
 - <!-- x1e80100 --> Dell XPS 13 9345
+- <!-- x1e80100 --> HP EliteBook Ultra G1q 14
 - <!-- x1e80100 --> HP Omnibook X 14
 - <!-- sc8280xp --> Huawei Matebook E Go
 - <!-- sc8180x  --> Lenovo Flex 5G
