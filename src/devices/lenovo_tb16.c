@@ -27,7 +27,7 @@ static EFI_GUID lenovo_thinkbook_16_g7_qoy_hwids[] = {
 
 static struct device lenovo_thinkbook_16_g7_qoy_dev = {
 	.name  = L"LENOVO ThinkBook 16 G7 QOY",
-	.dtb   = L"qcom\\x1p42100-lenovo-thinkbook-16.dtb", /* Tentative. */
+	.dtb   = L"qcom\\x1p42100-lenovo-thinkbook-16.dtb",
 	.hwids = lenovo_thinkbook_16_g7_qoy_hwids,
 };
 DEVICE_DESC(lenovo_thinkbook_16_g7_qoy_dev);
