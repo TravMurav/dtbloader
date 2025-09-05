@@ -27,7 +27,7 @@ static EFI_GUID lenovo_ideapad_slim_5_14q8x9_hwids[] = {
 
 static struct device lenovo_ideapad_slim_5_14q8x9_dev = {
 	.name  = L"LENOVO IdeaPad Slim 5 14Q8X9",
-	.dtb   = L"FIXME!",
+	.dtb   = L"qcom\\x1p42100-lenovo-ideapad-slim5x.dtb", /* Tentative. */
 	.hwids = lenovo_ideapad_slim_5_14q8x9_hwids,
 };
 DEVICE_DESC(lenovo_ideapad_slim_5_14q8x9_dev);
