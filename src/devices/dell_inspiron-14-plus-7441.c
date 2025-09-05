@@ -27,7 +27,7 @@ static EFI_GUID dell_inc__inspiron_14_plus_7441_hwids[] = {
 
 static struct device dell_inc__inspiron_14_plus_7441_dev = {
 	.name  = L"Dell Inc. Inspiron 14 Plus 7441",
-	.dtb   = L"qcom\\x1e80100-dell-inspiron-14-plus-7441.dtb", /* Tentative */
+	.dtb   = L"qcom\\x1e80100-dell-inspiron-14-plus-7441.dtb",
 	.hwids = dell_inc__inspiron_14_plus_7441_hwids,
 };
 DEVICE_DESC(dell_inc__inspiron_14_plus_7441_dev);
