@@ -1,0 +1,37 @@
+Computer Information
+--------------------
+BiosVendor: Insyde Corp.
+BiosVersion: V1.03
+BiosMajorRelease: 0
+BiosMinorRelease: 0
+FirmwareMajorRelease: 01
+FirmwareMinorRelease: 03
+Manufacturer: Acer
+Family: Swift Go 14 AI
+ProductName: Swift SFG14-01
+ProductSku: 
+EnclosureKind: a
+BaseboardManufacturer: SX1
+BaseboardProduct: Bluetang_SX1
+Hardware IDs
+------------
+{795d7de3-0e1e-5976-b0d2-2216375df442}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{327e7f1e-4a10-5fe1-8b4f-3c235ea128d9}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{627edbb7-fbdb-5de7-8382-f7abcbf9928a}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{79dd27da-6d6b-57da-8fba-b97b489be61d}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{3bd63b6b-dfa3-5314-9846-76363ae49445}   <- Manufacturer + Family + ProductName + ProductSku
+{03f8cc3c-5d61-5ea0-aeb1-b3142528bce2}   <- Manufacturer + Family + ProductName
+{3f49141c-d8fb-5a6f-8b4a-074a2397874d}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{7c107a7f-2d77-51aa-aef8-8d777e26ffbc}   <- Manufacturer + ProductSku
+{2e71fd01-d5f5-5c67-9abc-c47c10f08626}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{6abb9980-4909-5d87-95a4-871129047302}   <- Manufacturer + ProductName
+{a07b1705-c904-5a73-b97a-f46bc2dd8400}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{94782273-eb4e-57d4-b9c1-bfc88588e6c0}   <- Manufacturer + Family
+{92dcc94d-48f7-5ee8-b9ec-a6393fb7a484}   <- Manufacturer + EnclosureKind
+{32f83b0f-1fad-5be2-88be-5ab020e7a70e}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{1e301734-5d49-5df4-9ed2-aa1c0a9dddda}   <- Manufacturer
+Extra Hardware IDs
+------------------
+{e66990c4-b390-59c3-a580-149c73cfe585}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor
+{69670c5e-509d-5193-9f0a-882a00180b1a}   <- Manufacturer + Family + ProductName + BiosVendor
+{86654360-65f0-5935-bc87-81102c6a022b}   <- Manufacturer + BiosVendor
