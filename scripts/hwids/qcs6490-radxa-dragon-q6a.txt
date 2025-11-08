@@ -1,0 +1,34 @@
+Computer Information
+--------------------
+BiosVendor: Qualcomm Technologies, Inc.
+BiosVersion: 6.0.251013.BOOT.MXF.1.0.c1-00364-KODIAKLA-1
+BiosMajorRelease: 255
+BiosMinorRelease: 255
+FirmwareMajorRelease: ff
+FirmwareMinorRelease: ff
+Manufacturer: Radxa Computer Co., Ltd.
+Family: QCS6490
+ProductName: Radxa Dragon Q6A
+ProductSku: 6
+Hardware IDs
+------------
+{d3539254-af7f-5115-aef4-81dd990f5d6f}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{b4dbcde5-7742-52e8-812a-dce27e3bdc6d}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{6aa5bd84-54d3-55cc-bfa6-8375bd44708d}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+not available as 'BaseboardManufacturer' unknown
+{302c4e8a-35ec-548b-a66e-19ee0fd13b7e}   <- Manufacturer + Family + ProductName + ProductSku
+{6580e4f4-79f0-51b8-9fe2-aabaecba71e6}   <- Manufacturer + Family + ProductName
+not available as 'BaseboardManufacturer' unknown
+{e12e80ad-d8a6-57e1-be79-ec1bc76f96e5}   <- Manufacturer + ProductSku
+not available as 'BaseboardManufacturer' unknown
+{0b164575-51b1-5f88-98ac-6f0ead016657}   <- Manufacturer + ProductName
+not available as 'BaseboardManufacturer' unknown
+{a0dc9ade-f374-52f2-b763-05f5eb8de22d}   <- Manufacturer + Family
+not available as 'EnclosureKind' unknown
+not available as 'BaseboardManufacturer' unknown
+{96f77c3b-fa27-55f1-a319-7c337b839961}   <- Manufacturer
+Extra Hardware IDs
+------------------
+{ad6496e7-1e5e-5be4-acd4-18734d1a09e2}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor
+{d0fd9685-60a6-5acc-857e-c5b224024c93}   <- Manufacturer + Family + ProductName + BiosVendor
+{c0dbe9b8-6364-5274-be07-3a47c401c75b}   <- Manufacturer + BiosVendor
