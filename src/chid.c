@@ -109,6 +109,13 @@ static EFI_STATUS populate_raw_smbios_info(struct raw_smbios_info *info)
 	else
 		return EFI_NOT_FOUND;
 
+	info->Manufacturer = NULL;
+	info->ProductName = NULL;
+	info->ProductSku = NULL;
+	info->Family = NULL;
+	info->BaseboardManufacturer = NULL;
+	info->BaseboardProduct = NULL;
+
 	while (Smbios.Hdr->Type != 127) {
 
 		switch (Smbios.Hdr->Type) {
