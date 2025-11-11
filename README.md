@@ -3,8 +3,8 @@
 dtbloader is an EFI driver that finds and installs DeviceTree into the UEFI configuration table.
 
 Since most existing Windows-on-Arm devices focus on Windows, they use ACPI to boot. In many cases
-though this ACPI is hard or impossible to use with Linux so instead DT should be used. dtbloader
-attemtps to simplify running Linux-based or other OS that use DT by providing:
+though, this ACPI is hard or impossible to use with Linux so instead DT should be used. dtbloader
+attempts to simplify running Linux-based or other OS that use DT by providing:
 
 - **Device detection** that uses DMI to pick which DTB should be used.
 - **Device-specific DT fixups** to allow tailoring generic dtb to a given device (i.e. set hw variants, MAC...)
