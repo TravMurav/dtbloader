@@ -1,0 +1,30 @@
+Computer Information
+--------------------
+BiosVendor: Qualcomm Technologies, Inc.
+BiosVersion: BOOT.XF.QC710.8100-LIVA
+Manufacturer: Elitegroup Computer Systems Co., LTD.
+Family: SC7180
+ProductName: QC710
+ProductSku: 6
+BaseboardManufacturer: Elitegroup Computer Systems CO., LTD.
+BaseboardProduct: QC710
+Hardware IDs
+------------
+not available as 'BiosMajorRelease' unknown
+not available as 'BiosMajorRelease' unknown
+not available as 'BiosMajorRelease' unknown
+{6303e758-6932-5e81-a3b9-cc9570590686}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{11bb94a9-341f-50bd-a569-2f61f7c745d3}   <- Manufacturer + Family + ProductName + ProductSku
+{9879a093-0829-5ddc-ad6c-2069f38bb66e}   <- Manufacturer + Family + ProductName
+{332352d0-6474-53ce-b480-46ced6d1327b}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{0253c128-80b3-584d-9fc1-74b546aad2e6}   <- Manufacturer + ProductSku
+{c0ef167b-7a32-5ad7-8dbb-2462f696c107}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{0a89edb3-78c9-5b09-b58a-c5a5c7890945}   <- Manufacturer + ProductName
+{8d7bc998-a131-5a67-8f6b-3971a6a418ba}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{fc4aedfe-b0c4-5484-a635-02ffbe86400c}   <- Manufacturer + Family
+not available as 'EnclosureKind' unknown
+{0e86061d-32ff-5ee8-ac17-abaa35ee7c50}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{9aeea865-165a-5bad-b0a1-6e1b299939aa}   <- Manufacturer
+{dfc147a4-4369-5b01-8148-86f55396b8f3}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor
+{36a999ce-a606-57b5-a404-45bb5821669f}   <- Manufacturer + Family + ProductName + BiosVendor
+{46e573fa-e204-5d63-be46-c26b018c0cf3}   <- Manufacturer + BiosVendor
