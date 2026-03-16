@@ -1,0 +1,35 @@
+Computer Information
+--------------------
+BiosVendor: HONOR
+BiosVersion: 1.16
+BiosMajorRelease: 1
+BiosMinorRelease: 16
+FirmwareMajorRelease: 01
+FirmwareMinorRelease: 05
+Manufacturer: HONOR
+Family: HONOR MagicBook
+ProductName: MRO-XXX
+ProductSku: C233
+EnclosureKind: a
+BaseboardManufacturer: HONOR
+BaseboardProduct: MRO-XXX-PCB
+Hardware IDs
+------------
+{ea3d6abf-d171-51d9-aadc-2f01715a2526}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{8c4f216d-a380-5720-b036-13e1c9e6ed9f}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{533dd95d-f27c-5c70-bbfd-f60ed0ff9b8c}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{16f2294f-2175-5bac-8752-f304c65bccc3}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{8ca9c5e4-6465-5841-a567-b4c54597cf16}   <- Manufacturer + Family + ProductName + ProductSku
+{d9a47875-303e-5a56-bc53-a98ef97dda55}   <- Manufacturer + Family + ProductName
+{f470a9a4-99c0-5b88-8309-927c60430477}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{f05c7d5e-f47a-58de-88dc-4d92ac4c00a7}   <- Manufacturer + ProductSku
+{8850ea33-9bd6-5aaf-a013-45d1c87937a5}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{74e5317c-21cf-5cf6-bc70-5c78a3320848}   <- Manufacturer + ProductName
+{b7b0f714-757e-5bee-83bf-061428e79201}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{66609eaf-4d32-5fb8-914b-a9fe87dec85d}   <- Manufacturer + Family
+{77d4cc58-07d2-57b6-8d40-1ffd216caa7c}   <- Manufacturer + EnclosureKind
+{40cbc5ae-164b-56fc-a7ba-26a84932ab37}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{f1a46130-960c-51bc-a7a2-aeca9716cdd3}   <- Manufacturer
+{9ecaf40d-d1bd-5963-888a-9757fcc95448}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor
+{6a798bf3-64eb-5107-948b-810b9eabffba}   <- Manufacturer + Family + ProductName + BiosVendor
+{e2978b75-f661-540d-84fa-baa95e5cc311}   <- Manufacturer + BiosVendor
