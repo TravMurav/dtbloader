@@ -1,0 +1,35 @@
+Computer Information
+--------------------
+BiosVendor: Medion
+BiosVersion: 1.01
+BiosMajorRelease: 1
+BiosMinorRelease: 1
+FirmwareMajorRelease: 01
+FirmwareMinorRelease: 00
+Manufacturer: MEDION
+Family: SPRCHRGD
+ProductName: 14 S1 Elite
+ProductSku: ML-230007 40088746
+EnclosureKind: a
+BaseboardManufacturer: MEDION
+BaseboardProduct: NM14QX4
+Hardware IDs
+------------
+{59bcb46d-62ee-55d4-980d-e09c63f26742}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{f80f8da8-3154-5238-b772-407b6c8a1d74}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{8cb18455-eeb3-551c-80c6-c50935119651}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{38ddee23-4afd-56ae-b3f4-c770c089b789}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{60515c1c-2c6e-5a34-b901-7e5379ec319c}   <- Manufacturer + Family + ProductName + ProductSku
+{2904a882-918e-5f0b-9ac6-6a9737e685c9}   <- Manufacturer + Family + ProductName
+{b9c6bacf-1623-57b7-9762-238fd874a17e}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{17669d40-8754-5448-aa06-ccb2e4ee7599}   <- Manufacturer + ProductSku
+{f3ceb2c3-66db-5519-98bc-d62cba323666}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{9eb99973-f4f7-53b2-8682-faafa5f8ad1f}   <- Manufacturer + ProductName
+{ec048a86-f99a-5f29-a128-04d9254808ba}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{6c8c18e3-97bc-5d6a-8925-6b35df930a63}   <- Manufacturer + Family
+{6827ad14-820d-5cd8-99d7-bbca641f70f9}   <- Manufacturer + EnclosureKind
+{051d7406-b9df-588c-aba8-641ef322aaf2}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{54c22697-274f-5508-ba48-07d5bd0c0894}   <- Manufacturer
+{5f684414-01bc-5941-9378-aa67be1c6953}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor
+{776dd828-0ea0-52b3-93d9-b4f97ac0e7e1}   <- Manufacturer + Family + ProductName + BiosVendor
+{b5c59cf9-9f70-5709-99c3-9bc3ae44a9f0}   <- Manufacturer + BiosVendor
