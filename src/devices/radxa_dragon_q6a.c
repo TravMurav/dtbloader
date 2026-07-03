@@ -3,7 +3,7 @@
 #include <efi.h>
 #include <device.h>
 
-static EFI_GUID radxa_computer_co___ltd__dragon_hwids[] = {
+static EFI_GUID radxa_computer_co___ltd__radxa_dragon_q6a_hwids[] = {
 	{ 0x828eb813, 0x7088, 0x5b74, { 0x91, 0xb2, 0x58, 0x1c, 0x71, 0xa9, 0xe5, 0x8a } },
 	{ 0xd46d782d, 0xed40, 0x5cc5, { 0x9c, 0xb1, 0x03, 0xbd, 0x0f, 0x1b, 0xa1, 0xac } },
 	{ 0x36dc60d9, 0x36a7, 0x5d6d, { 0xb7, 0xd1, 0xb2, 0x0d, 0x3b, 0x85, 0x21, 0xc1 } },
@@ -25,9 +25,9 @@ static EFI_GUID radxa_computer_co___ltd__dragon_hwids[] = {
 	{ }
 };
 
-static struct device radxa_computer_co___ltd__dragon_dev = {
-	.name  = L"Radxa Computer Co., Ltd. Dragon",
+static struct device radxa_computer_co___ltd__radxa_dragon_q6a_dev = {
+	.name  = L"Radxa Computer Co., Ltd. Radxa Dragon Q6A",
 	.dtb   = L"qcom\\qcs6490-radxa-dragon-q6a.dtb",
-	.hwids = radxa_computer_co___ltd__dragon_hwids,
+	.hwids = radxa_computer_co___ltd__radxa_dragon_q6a_hwids,
 };
-DEVICE_DESC(radxa_computer_co___ltd__dragon_dev);
+DEVICE_DESC(radxa_computer_co___ltd__radxa_dragon_q6a_dev);
