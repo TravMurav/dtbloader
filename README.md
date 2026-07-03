@@ -50,6 +50,7 @@ attempts to simplify running Linux-based or other OS that use DT by providing:
 - <!-- sc8280xp --> Microsoft Windows Dev Kit 2023
 - <!-- x1e001de --> QTI Snapdragon Devkit for Windows (x1e)
 - <!-- qcs6490 --> Radxa Dragon Q6A
+- *<!-- sc8280xp --> Radxa Dragon Q8B*
 
 (Note: Devices marked with *italic* may not be available in upstream Linux or linux-next yet.)
 
