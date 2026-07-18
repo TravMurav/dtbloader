@@ -1,30 +1,34 @@
 Computer Information
 --------------------
 BiosVendor: Qualcomm Technologies, Inc.
-BiosVersion: 6.0.260608.BOOT.MXF.1.1.c1-00167-MAKENA-1
+BiosVersion: 6.0.260717.BOOT.MXF.1.1.c1-00167-MAKENA-1
+BiosMajorRelease: 255
+BiosMinorRelease: 255
+FirmwareMajorRelease: ff
+FirmwareMinorRelease: ff
 Manufacturer: Radxa Computer Co., Ltd.
 Family: Dragon
 ProductName: Radxa Dragon Q8B
 ProductSku: 6
-EnclosureKind: 35
+EnclosureKind: 23
 BaseboardManufacturer: Radxa Computer Co., Ltd.
-BaseboardProduct: Radxa Dragon Q8B
+BaseboardProduct: RS782-D16S32W0
 Hardware IDs
 ------------
-not available as 'BiosMajorRelease' unknown
-not available as 'BiosMajorRelease' unknown
-not available as 'BiosMajorRelease' unknown
-{32978e78-153f-5ce0-a6c7-05332e9be35b}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{8c59787d-f7e8-5b0b-9c24-ae80a8dd2b82}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{4a50a4f5-a77d-5c41-88a7-4c00a0cd36b9}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{0b6c7624-bd5e-558b-8771-6a8fd2a35974}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{2e452ec2-59f9-55e0-b749-36e2dd52889a}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
 {93975fa3-a84a-5a58-a065-1de7e0bcf58f}   <- Manufacturer + Family + ProductName + ProductSku
 {616a4751-7393-5af2-9d86-bd0830b2879c}   <- Manufacturer + Family + ProductName
-{72cee887-e3b7-569a-b301-a6c60ce4fe94}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{84980935-f63d-5462-ba69-68a1a6cd2da8}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
 {e12e80ad-d8a6-57e1-be79-ec1bc76f96e5}   <- Manufacturer + ProductSku
-{6f487192-b176-566b-b165-3a56ff779c1a}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{5359ffc7-3d6a-559d-a76f-5f7a1e945cea}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
 {0892d6ad-c297-548b-813b-d3ade091f75a}   <- Manufacturer + ProductName
-{fc3f2e5b-9d50-5e13-9002-b9765dcc78e5}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{ad855968-1eb1-57e0-97ec-c19dcd19be1a}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
 {140458e4-2adc-5d37-bee0-829fd1934ac4}   <- Manufacturer + Family
-{51cdce95-3bdd-5466-b7aa-b4dc59bb2544}   <- Manufacturer + EnclosureKind
-{7be39f21-8c50-5658-ba11-a33996cd0092}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{7dcb823c-285e-5ff9-9e0b-2e40c6fed75c}   <- Manufacturer + EnclosureKind
+{c0b1a7bf-b844-534a-be3e-5356364bf54c}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
 {96f77c3b-fa27-55f1-a319-7c337b839961}   <- Manufacturer
 {67ae360a-59f4-5f6a-9100-15270232f899}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor
 {5c83a423-e471-5160-be87-bf824c48b38c}   <- Manufacturer + Family + ProductName + BiosVendor
