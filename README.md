@@ -24,6 +24,7 @@ attempts to simplify running Linux-based or other OS that use DT by providing:
 - *<!-- glymur --> ASUS Zenbook A14 UX3407NA*
 - <!-- x1p42100 --> ASUS Zenbook A14 UX3407QA
 - <!-- x1e80100 --> ASUS Zenbook A14 UX3407RA
+- *<!-- glymur --> Asus Zenbook A16 UX3607OA*
 - <!-- x1e80100 --> Dell Inspiron 14 Plus 7441
 - *<!-- x1p64100 --> Dell Latitude 5455*
 - <!-- x1e80100 --> Dell Latitude 7455

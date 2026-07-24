@@ -1,0 +1,29 @@
+Computer Information
+--------------------
+BiosVendor: Insyde
+BiosVersion: UX3607OA.312
+BiosReleaseDate: 07/12/2026
+Manufacturer: ASUS
+Family: Zenbook A16
+ProductName: Zenbook A16 UX3607OA
+ProductSku:
+EnclosureKind: 10
+BaseboardManufacturer: ASUSTeK COMPUTER INC.
+BaseboardProduct: UX3607OA
+Hardware IDs
+------------
+not available as 'BiosMajorRelease' unknown
+not available as 'BiosMajorRelease' unknown
+not available as 'BiosMajorRelease' unknown
+{f5fe8d44-6deb-526c-bcde-15214588d061}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{7db8b4b3-f031-5a1f-8f5b-052946fafef6}   <- Manufacturer + Family + ProductName + ProductSku
+{9aca06aa-73c1-5b12-9bdb-d88c0111910c}   <- Manufacturer + Family + ProductName
+{11365785-f0f4-52d6-ba2a-e34cda455950}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{27fc49a6-607b-5f8d-bcd4-eb8bdedfb31a}   <- Manufacturer + ProductSku
+{ef65dda1-fabb-5a20-9f5b-173b9876cf17}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{176f35e1-a53c-5823-85ec-0e69ddccc718}   <- Manufacturer + ProductName
+{aa97280b-2a64-5146-8cf5-1ab4cff4f4f7}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{8d1e50f4-5fca-5e73-91f3-21e46a9419ab}   <- Manufacturer + Family
+{e8e5925e-7427-56d9-a2ec-617b23608a83}   <- Manufacturer + EnclosureKind
+{e2bb821e-aeef-5cfc-a062-392f2539fd67}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{c4e7b7b9-2520-5397-8040-8ac279f540d8}   <- Manufacturer
