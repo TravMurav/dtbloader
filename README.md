@@ -21,6 +21,7 @@ attempts to simplify running Linux-based or other OS that use DT by providing:
 - *<!-- x1p64100 --> Acer Swift 14 AI*
 - *<!-- x1p42100 --> Acer Swift Go 14 AI*
 - <!-- x1e80100 --> ASUS Vivobook S 15
+- *<!-- glymur --> ASUS Zenbook A14 UX3407NA*
 - <!-- x1p42100 --> ASUS Zenbook A14 UX3407QA
 - <!-- x1e80100 --> ASUS Zenbook A14 UX3407RA
 - <!-- x1e80100 --> Dell Inspiron 14 Plus 7441

@@ -1,0 +1,33 @@
+Computer Information
+--------------------
+BiosVendor: Insyde
+BiosVersion: UX3407NA.312
+BiosMajorRelease: 3
+BiosMinorRelease: 18
+BiosReleaseDate: 4/23/2026
+FirmwareMajorRelease: 03
+FirmwareMinorRelease: 0a
+Manufacturer: ASUS
+Family: Zenbook A14
+ProductName: Zenbook A14 UX3407NA
+ProductSku: 
+EnclosureKind: a
+BaseboardManufacturer: ASUSTeK COMPUTER INC.
+BaseboardProduct: UX3407NA
+Hardware IDs
+------------
+{f83b2743-4d7a-5fc5-ab29-8f7c3955ce91}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{239dac86-8b01-592b-b89d-405153e44194}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{a44af168-a1f5-59cb-9af2-451316f4fe3d}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{1a80da71-97b3-50c6-a8c2-5c8c4356cbd1}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{889cd77f-34a1-541f-a95f-6566c8fcda20}   <- Manufacturer + Family + ProductName + ProductSku
+{b680d605-b115-5d67-b413-93f44ff3220a}   <- Manufacturer + Family + ProductName
+{48008168-2010-52ff-aaaf-ab706ba99638}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{27fc49a6-607b-5f8d-bcd4-eb8bdedfb31a}   <- Manufacturer + ProductSku
+{16ae4df2-f7ce-59fb-82be-33464322d7ee}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{7a71569d-bdb8-5feb-bf86-3c17d3eece44}   <- Manufacturer + ProductName
+{c0717bbf-62ca-5ab1-a76b-75f3fd1bc013}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{5d0f45c0-12f0-52b8-ab63-de918ae8398b}   <- Manufacturer + Family
+{a29d04c1-686b-5861-9ff7-cadf33cbcb97}   <- Manufacturer + EnclosureKind
+{d5b220de-1d41-5864-b380-78b513e8d9cd}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{c4e7b7b9-2520-5397-8040-8ac279f540d8}   <- Manufacturer
