@@ -34,6 +34,7 @@ attempts to simplify running Linux-based or other OS that use DT by providing:
 - <!-- x1e80100 --> HP Omnibook X 14
 - <!-- sc8280xp --> Huawei Matebook E Go
 - <!-- sc8180x  --> Lenovo Flex 5G
+- *<!-- purwa --> Lenovo IdeaCentre Mini 01Q8X10*
 - *<!-- x1p42100 --> Lenovo IdeaPad 5 2-in-1 14Q8X9*
 - *<!-- x1p42100 --> Lenovo IdeaPad Slim 5 14Q8X9*
 - <!-- msm8998 --> Lenovo Miix 630
