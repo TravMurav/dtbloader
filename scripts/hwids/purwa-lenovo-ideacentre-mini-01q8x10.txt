@@ -1,0 +1,35 @@
+Computer Information
+--------------------
+BiosVendor: LENOVO
+BiosVersion: O6NKT3BA
+BiosMajorRelease: 1
+BiosMinorRelease: 59
+FirmwareMajorRelease: 00
+FirmwareMinorRelease: 16
+Manufacturer: LENOVO
+Family: IdeaCentre Mini 01Q8X10
+ProductName: 91B6001CUK
+ProductSku: LENOVO_MT_91B6_BU_Lenovo_FM_IdeaCentre Mini 01Q8X10
+EnclosureKind: 23
+BaseboardManufacturer: LENOVO
+BaseboardProduct: 3796
+Hardware IDs
+------------
+{694ae0fe-f407-5a28-a7b8-42874f767fd1}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{ce9593db-c21e-5d92-922a-b5881d3b5bc0}   <- Manufacturer + Family + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{a1a3bdb0-0bf6-51ba-84b8-15bc0ffa1085}   <- Manufacturer + ProductName + BiosVendor + BiosVersion + BiosMajorRelease + BiosMinorRelease
+{0fa5b19a-d837-55eb-8cc3-2961dcbcc5cc}   <- Manufacturer + Family + ProductName + ProductSku + BaseboardManufacturer + BaseboardProduct
+{8db38791-9759-5f99-9fda-4528aa7fcd85}   <- Manufacturer + Family + ProductName + ProductSku
+{434b3aab-4cfb-5916-af0f-015b1887af66}   <- Manufacturer + Family + ProductName
+{e9b204d4-c5de-5235-a9e1-ca1a27930eae}   <- Manufacturer + ProductSku + BaseboardManufacturer + BaseboardProduct
+{03b204a1-c87d-5d0a-a830-71c3b267efe1}   <- Manufacturer + ProductSku
+{8cf5845d-547c-558e-b5db-2dc96c3a1918}   <- Manufacturer + ProductName + BaseboardManufacturer + BaseboardProduct
+{3553f25c-472d-519d-9e7b-93284da42015}   <- Manufacturer + ProductName
+{cedd9e06-b4d3-5a74-944e-7fba5d8f8faa}   <- Manufacturer + Family + BaseboardManufacturer + BaseboardProduct
+{a1b36e1c-3387-5999-858a-05f5d4fcabbd}   <- Manufacturer + Family
+{78cfbbd7-c5d4-5d24-9ad2-df6114c7d37d}   <- Manufacturer + EnclosureKind
+{bc13b5da-3d33-5b8a-a3a8-d9b213a6a4e5}   <- Manufacturer + BaseboardManufacturer + BaseboardProduct
+{6de5d951-d755-576b-bd09-c5cf66b27234}   <- Manufacturer
+{737534ab-4396-53d7-9bb7-3c21176b24b0}   <- Manufacturer + Family + ProductName + ProductSku + BiosVendor
+{d3ff9b34-1c07-5574-ad73-f90bdc1d33f6}   <- Manufacturer + Family + ProductName + BiosVendor
+{99431f53-09a1-5869-be79-65e2fa3f341d}   <- Manufacturer + BiosVendor
