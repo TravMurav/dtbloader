@@ -27,7 +27,7 @@ static EFI_GUID lenovo_ideacentre_mini_01q8x10_hwids[] = {
 
 static struct device lenovo_ideacentre_mini_01q8x10_dev = {
 	.name  = L"LENOVO IdeaCentre Mini 01Q8X10",
-	.dtb   = L"qcom\purwa-lenovo-ideacentre-mini-01q8x10.dts",
+	.dtb   = L"qcom\\purwa-lenovo-ideacentre-mini-01q8x10.dtb",
 	.hwids = lenovo_ideacentre_mini_01q8x10_hwids,
 };
 DEVICE_DESC(lenovo_ideacentre_mini_01q8x10_dev);
